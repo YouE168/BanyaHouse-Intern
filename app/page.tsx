@@ -67,7 +67,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Offerings</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our Offerings</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Choose the sauna experience that works best for you
             </p>
@@ -76,31 +76,33 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Private Sessions */}
             <div className="bg-card rounded-xl p-8 border border-border hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
-                <Users className="text-accent-foreground" size={24} />
+              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                <Users className="text-secondary-foreground" size={24} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Private Group Sessions</h3>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">Private Group Sessions</h3>
               <p className="text-muted-foreground mb-6">
-                Host a private escape at a time that works best for you—morning or afternoon. Our sauna accommodates 6
-                people at a time. Larger groups can rotate for a seamless experience.
+                Join us for exclusive sauna experiences. Perfect for friends, family, or corporate wellness.
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span>Access to sauna & cold plunge</span>
+                  <Check size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">Access to sauna (up to 6 people)</span>
                 </li>
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span>Towels and wool sauna hats</span>
+                  <Check size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">Towels, wool hats & essential oils</span>
                 </li>
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span>Lounging area</span>
+                  <Check size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">Ice starter included</span>
                 </li>
               </ul>
+              <p className="text-sm text-muted-foreground mb-4">
+                <strong>Add-ons available:</strong> Cold plunge, dressing room, chairs
+              </p>
               <Link
                 href="/book"
-                className="text-accent font-semibold hover:opacity-80 transition flex items-center gap-2"
+                className="text-secondary font-semibold hover:opacity-80 transition flex items-center gap-2"
               >
                 Book Session <ArrowRight size={16} />
               </Link>
@@ -108,31 +110,35 @@ export default function Home() {
 
             {/* Delivered Experience */}
             <div className="bg-card rounded-xl p-8 border border-border hover:shadow-lg transition">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
-                <Flame className="text-accent-foreground" size={24} />
+              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                <Flame className="text-secondary-foreground" size={24} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Delivered Sauna & Cold Plunge Experience</h3>
-              <p className="text-muted-foreground mb-6">
-                Ideal for extended rentals at your home, event space, or short-term rental. Great for parties, retreats,
-                or multi-hour relaxation sessions.
+              <h3 className="text-2xl font-bold mb-4 text-foreground">Delivered Sauna Experience</h3>
+              <p className="text-muted-foreground mb-4">
+                Perfect for parties, retreats, events, and extended relaxation sessions at your home or venue.
               </p>
+              <div className="bg-accent/10 border border-accent/30 rounded-lg p-3 mb-6">
+                <p className="text-sm text-foreground">
+                  <strong>📅 Delivery:</strong> Weekdays after 4pm | Weekends anytime
+                </p>
+              </div>
               <ul className="space-y-3 mb-6">
                 <li className="flex gap-2 items-start">
                   <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span>Delivery, setup, and takedown</span>
+                  <span className="text-foreground">Full delivery, setup & takedown</span>
                 </li>
                 <li className="flex gap-2 items-start">
                   <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span>Firewood starter package</span>
+                  <span className="text-foreground">Firewood & essentials included</span>
                 </li>
                 <li className="flex gap-2 items-start">
                   <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span>Cold plunge tub + ice setup</span>
+                  <span className="text-foreground">Optional cold plunge & attendant</span>
                 </li>
               </ul>
               <Link
                 href="/services"
-                className="text-accent font-semibold hover:opacity-80 transition flex items-center gap-2"
+                className="text-secondary font-semibold hover:opacity-80 transition flex items-center gap-2"
               >
                 View Details <ArrowRight size={16} />
               </Link>
@@ -145,7 +151,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">How It Works</h2>
             <p className="text-lg text-muted-foreground">Simple, seamless sauna experiences</p>
           </div>
 
@@ -153,14 +159,14 @@ export default function Home() {
             {[
               { step: "1", title: "Choose Your Experience", desc: "Private session or full delivery" },
               { step: "2", title: "Pick Your Time", desc: "Schedule at your convenience" },
-              { step: "3", title: "We Set Up", desc: "Arrive, deliver, and prepare" },
+              { step: "3", title: "We Set Up", desc: "Professional delivery and setup" },
               { step: "4", title: "Enjoy & Relax", desc: "Experience premium wellness" },
             ].map((item) => (
               <div key={item.step} className="text-center">
                 <div className="w-16 h-16 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                   {item.step}
                 </div>
-                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                <h3 className="font-bold text-lg mb-2 text-foreground">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
@@ -200,7 +206,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Service Areas</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Service Areas</h2>
             <p className="text-lg text-muted-foreground">We deliver throughout the Greater Topeka region</p>
           </div>
 
@@ -211,7 +217,7 @@ export default function Home() {
                 href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`}
                 className="p-6 bg-card rounded-lg border border-border hover:border-primary hover:shadow-lg transition text-center"
               >
-                <h3 className="font-semibold text-lg mb-2">{city}</h3>
+                <h3 className="font-semibold text-lg mb-2 text-foreground">{city}</h3>
                 <p className="text-sm text-muted-foreground">Serving the {city} area</p>
               </Link>
             ))}

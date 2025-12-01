@@ -30,28 +30,28 @@ export default function GiftCardsPage() {
             ))}
           </div>
 
-          <div className="bg-muted/50 rounded-xl p-8">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">How Gift Cards Work</h2>
-            <ul className="space-y-3">
-              <li className="flex gap-3">
-                <span className="font-bold text-primary">1.</span>
-                <span className="text-foreground">Purchase a gift card in any amount</span>
+          <div className="bg-muted/50 rounded-xl p-8 md:p-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-5 md:mb-6 text-foreground">How Gift Cards Work</h2>
+            <ul className="space-y-4 md:space-y-5">
+              <li className="flex gap-3 md:gap-4">
+                <span className="font-bold text-primary text-xl md:text-2xl">1.</span>
+                <span className="text-foreground text-base md:text-lg lg:text-xl pt-0.5">Purchase a gift card in any amount</span>
               </li>
-              <li className="flex gap-3">
-                <span className="font-bold text-primary">2.</span>
-                <span className="text-foreground">Receive digital or physical card</span>
+              <li className="flex gap-3 md:gap-4">
+                <span className="font-bold text-primary text-xl md:text-2xl">2.</span>
+                <span className="text-foreground text-base md:text-lg lg:text-xl pt-0.5">Receive digital or physical card</span>
               </li>
-              <li className="flex gap-3">
-                <span className="font-bold text-primary">3.</span>
-                <span className="text-foreground">Recipient books their experience</span>
+              <li className="flex gap-3 md:gap-4">
+                <span className="font-bold text-primary text-xl md:text-2xl">3.</span>
+                <span className="text-foreground text-base md:text-lg lg:text-xl pt-0.5">Recipient books their experience</span>
               </li>
-              <li className="flex gap-3">
-                <span className="font-bold text-primary">4.</span>
-                <span className="text-foreground">Redeem card at booking</span>
+              <li className="flex gap-3 md:gap-4">
+                <span className="font-bold text-primary text-xl md:text-2xl">4.</span>
+                <span className="text-foreground text-base md:text-lg lg:text-xl pt-0.5">Redeem card at booking</span>
               </li>
-              <li className="flex gap-3">
-                <span className="font-bold text-primary">5.</span>
-                <span className="text-foreground">No expiration - valid indefinitely</span>
+              <li className="flex gap-3 md:gap-4">
+                <span className="font-bold text-primary text-xl md:text-2xl">5.</span>
+                <span className="text-foreground text-base md:text-lg lg:text-xl pt-0.5">No expiration - valid indefinitely</span>
               </li>
             </ul>
           </div>
