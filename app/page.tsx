@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { ArrowRight, Flame, Users, Gift, Check } from "lucide-react"
+import Link from "next/link";
+import { ArrowRight, Flame, Users, Gift, Check } from "lucide-react";
+import LocationSection from "@/components/LocationSection";
 
 export default function Home() {
   return (
@@ -14,10 +15,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">Experience Premium Wellness</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
+                Experience Premium Wellness
+              </h1>
               <p className="text-lg md:text-xl opacity-95 mb-8 text-balance">
-                Delivered sauna and cold plunge experiences. Host your friends, retreat with loved ones, or schedule
-                private wellness sessions in Topeka.
+                Delivered sauna and cold plunge experiences. Host your friends,
+                retreat with loved ones, or schedule private wellness sessions
+                in Topeka.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -53,7 +57,7 @@ export default function Home() {
             <div className="hidden md:block relative">
               <div className="relative w-full aspect-square bg-secondary/20 rounded-2xl overflow-hidden border-2 border-secondary/30 flex items-center justify-center">
                 <img
-                  src="/wood-fired-sauna-barrel-with-warm-glow.jpg"
+                  src="/pictures/wood-fired-sauna-barrel-with-warm-glow.jpg"
                   alt="Wood-fired sauna"
                   className="w-full h-full object-cover"
                 />
@@ -67,7 +71,9 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our Offerings</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Our Offerings
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Choose the sauna experience that works best for you
             </p>
@@ -79,26 +85,43 @@ export default function Home() {
               <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
                 <Users className="text-secondary-foreground" size={24} />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-foreground">Private Group Sessions</h3>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
+                Private Group Sessions
+              </h3>
               <p className="text-muted-foreground mb-6">
-                Join us for exclusive sauna experiences. Perfect for friends, family, or corporate wellness.
+                Join us for exclusive sauna experiences. Perfect for friends,
+                family, or corporate wellness.
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-secondary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Access to sauna (up to 6 people)</span>
+                  <Check
+                    size={20}
+                    className="text-secondary mt-0.5 flex-shrink-0"
+                  />
+                  <span className="text-foreground">
+                    Access to sauna (up to 6 people)
+                  </span>
                 </li>
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-secondary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Towels, wool hats & essential oils</span>
+                  <Check
+                    size={20}
+                    className="text-secondary mt-0.5 flex-shrink-0"
+                  />
+                  <span className="text-foreground">
+                    Towels, wool hats & essential oils
+                  </span>
                 </li>
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <Check
+                    size={20}
+                    className="text-secondary mt-0.5 flex-shrink-0"
+                  />
                   <span className="text-foreground">Ice starter included</span>
                 </li>
               </ul>
               <p className="text-sm text-muted-foreground mb-4">
-                <strong>Add-ons available:</strong> Cold plunge, dressing room, chairs
+                <strong>Add-ons available:</strong> Cold plunge, dressing room,
+                chairs
               </p>
               <Link
                 href="/book"
@@ -113,27 +136,46 @@ export default function Home() {
               <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
                 <Flame className="text-secondary-foreground" size={24} />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-foreground">Delivered Sauna Experience</h3>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
+                Delivered Sauna Experience
+              </h3>
               <p className="text-muted-foreground mb-4">
-                Perfect for parties, retreats, events, and extended relaxation sessions at your home or venue.
+                Perfect for parties, retreats, events, and extended relaxation
+                sessions at your home or venue.
               </p>
               <div className="bg-accent/10 border border-accent/30 rounded-lg p-3 mb-6">
                 <p className="text-sm text-foreground">
-                  <strong>📅 Delivery:</strong> Weekdays after 4pm | Weekends anytime
+                  <strong>📅 Delivery:</strong> Weekdays after 4pm | Weekends
+                  anytime
                 </p>
               </div>
               <ul className="space-y-3 mb-6">
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Full delivery, setup & takedown</span>
+                  <Check
+                    size={20}
+                    className="text-accent mt-0.5 flex-shrink-0"
+                  />
+                  <span className="text-foreground">
+                    Full delivery, setup & takedown
+                  </span>
                 </li>
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Firewood & essentials included</span>
+                  <Check
+                    size={20}
+                    className="text-accent mt-0.5 flex-shrink-0"
+                  />
+                  <span className="text-foreground">
+                    Firewood & essentials included
+                  </span>
                 </li>
                 <li className="flex gap-2 items-start">
-                  <Check size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Optional cold plunge & attendant</span>
+                  <Check
+                    size={20}
+                    className="text-accent mt-0.5 flex-shrink-0"
+                  />
+                  <span className="text-foreground">
+                    Optional cold plunge & attendant
+                  </span>
                 </li>
               </ul>
               <Link
@@ -151,22 +193,44 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">How It Works</h2>
-            <p className="text-lg text-muted-foreground">Simple, seamless sauna experiences</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              How It Works
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Simple, seamless sauna experiences
+            </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: "1", title: "Choose Your Experience", desc: "Private session or full delivery" },
-              { step: "2", title: "Pick Your Time", desc: "Schedule at your convenience" },
-              { step: "3", title: "We Set Up", desc: "Professional delivery and setup" },
-              { step: "4", title: "Enjoy & Relax", desc: "Experience premium wellness" },
+              {
+                step: "1",
+                title: "Choose Your Experience",
+                desc: "Private session or full delivery",
+              },
+              {
+                step: "2",
+                title: "Pick Your Time",
+                desc: "Schedule at your convenience",
+              },
+              {
+                step: "3",
+                title: "We Set Up",
+                desc: "Professional delivery and setup",
+              },
+              {
+                step: "4",
+                title: "Enjoy & Relax",
+                desc: "Experience premium wellness",
+              },
             ].map((item) => (
               <div key={item.step} className="text-center">
                 <div className="w-16 h-16 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                   {item.step}
                 </div>
-                <h3 className="font-bold text-lg mb-2 text-foreground">{item.title}</h3>
+                <h3 className="font-bold text-lg mb-2 text-foreground">
+                  {item.title}
+                </h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
@@ -189,9 +253,12 @@ export default function Home() {
           <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <Gift className="text-white" size={32} />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Give the Gift of Wellness</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Give the Gift of Wellness
+          </h2>
           <p className="text-lg text-white/90 mb-8">
-            Perfect for holidays, birthdays, or any occasion. Gift cards available in any denomination.
+            Perfect for holidays, birthdays, or any occasion. Gift cards
+            available in any denomination.
           </p>
           <Link
             href="/gift-cards"
@@ -206,21 +273,31 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Service Areas</h2>
-            <p className="text-lg text-muted-foreground">We deliver throughout the Greater Topeka region</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Service Areas
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              We deliver throughout the Greater Topeka region
+            </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
-            {["Topeka", "Kansas City", "Overland Park", "Lawrence"].map((city) => (
-              <Link
-                key={city}
-                href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`}
-                className="p-6 bg-card rounded-lg border border-border hover:border-primary hover:shadow-lg transition text-center"
-              >
-                <h3 className="font-semibold text-lg mb-2 text-foreground">{city}</h3>
-                <p className="text-sm text-muted-foreground">Serving the {city} area</p>
-              </Link>
-            ))}
+            {["Topeka", "Kansas City", "Overland Park", "Lawrence"].map(
+              (city) => (
+                <Link
+                  key={city}
+                  href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="p-6 bg-card rounded-lg border border-border hover:border-primary hover:shadow-lg transition text-center"
+                >
+                  <h3 className="font-semibold text-lg mb-2 text-foreground">
+                    {city}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Serving the {city} area
+                  </p>
+                </Link>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -228,9 +305,12 @@ export default function Home() {
       {/* CTA */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Wellness?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Experience Wellness?
+          </h2>
           <p className="text-lg opacity-90 mb-8">
-            Book your sauna experience today and transform your relaxation routine.
+            Book your sauna experience today and transform your relaxation
+            routine.
           </p>
           <Link
             href="/book"
@@ -240,6 +320,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Location Section */}
+      <LocationSection />
     </main>
-  )
+  );
 }

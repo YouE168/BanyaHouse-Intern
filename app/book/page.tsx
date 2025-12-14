@@ -229,7 +229,7 @@ export default function BookPage() {
                 <span className="text-sm text-foreground">
                   I have read and agree to the{' '}
                   <a 
-                    href="/BanyaHouse-Liability-Waiver.pdf" 
+                    href="/liability-waiver.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-primary font-semibold hover:opacity-80 underline"
