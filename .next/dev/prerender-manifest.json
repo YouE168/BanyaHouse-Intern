@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/cities/topeka":{},"/cities/kansas-city":{},"/cities/overland-park":{},"/cities/lawrence":{}},"dynamicRoutes":{"/cities/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/cities/[slug]","routeRegex":"^\\/cities\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"100b465cedb9d06b6628d6cbb604fb85","previewModeSigningKey":"064076a4cbd02a84bda7d1b613b437a9e2c03e3598793350f20bfd7bc58fc0ce","previewModeEncryptionKey":"d53b40135bcad0c93e61902150be04ebb03ea6eafcec5896c33f8927f8d60898"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "93dd0c9427d4d5d42764b730ea3e6442",
+    "previewModeSigningKey": "c9bc8f6e25b5da0017205b0979348af942c8ec24f7ce6fc6b72ef0290668def1",
+    "previewModeEncryptionKey": "7606c26af7aa25bcf7ae5d54b49b132a500c8888054cdee84e7c5eee1a043919"
+  }
+}
