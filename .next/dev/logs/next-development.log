@@ -1,1 +1,253 @@
-[00:00:00.583] Server  LOG      ✓ Ready in 388ms
+[00:00:00.629] Server  LOG      ✓ Ready in 434ms
+[00:00:07.296] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:00:07.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.982] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:07.982] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:07.982] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765911382426}
+[00:00:21.857] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services color: rgb(120, 120, 120) color: inherit {"dp":"/services","o":"http://localhost:3000/services","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765911396303}
+[00:00:50.332] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/book color: rgb(120, 120, 120) color: inherit {"dp":"/book","o":"http://localhost:3000/book","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765911424777}
+[00:01:04.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:04.189] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:04.189] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/book","route":"/book"}
+[00:01:04.189] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/book color: rgb(120, 120, 120) color: inherit {"dp":"/book","o":"http://localhost:3000/book","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765911438634}
+[00:03:19.939] Server  ERROR    ⨯ ./app/book/page.tsx:3:1
+Module not found: Can't resolve './globals.css'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import Navigation from "@/components/Navigation";
+  5 | import Footer from "@/components/Footer";
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:19.943] Server  ERROR    ⨯ ./app/book/page.tsx:3:1
+Module not found: Can't resolve './globals.css'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import Navigation from "@/components/Navigation";
+  5 | import Footer from "@/components/Footer";
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:19.944] Server  ERROR    ⨯ ./app/book/page.tsx:3:1
+Module not found: Can't resolve './globals.css'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import Navigation from "@/components/Navigation";
+  5 | import Footer from "@/components/Footer";
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:19.974] Server  LOG      ✓ Compiled in 27ms
+[00:03:20.137] Browser ERROR   ./app/book/page.tsx:3:1
+Module not found: Can't resolve './globals.css'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import Navigation from "@/components/Navigation";
+  5 | import Footer from "@/components/Footer";
+  6 |
+
+https://nextjs.org/docs/messages/module-not-found
+[00:03:36.138] Browser ERROR   ./app/book/page.tsx:3:1
+Module not found: Can't resolve './globals.css'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import Navigation from "@/components/Navigation";
+  5 | import Footer from "@/components/Footer";
+  6 |
+
+https://nextjs.org/docs/messages/module-not-found
+[00:03:50.823] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765911605270}
+[00:09:00.114] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:22:56.194] Server  LOG      ✓ Compiled in 16ms
+[00:22:57.137] Browser ERROR   ./app/book/page.tsx:8:14
+Ecmascript file had an error
+   6 |
+   7 | // Metadata export
+>  8 | export const metadata: Metadata = {
+     |              ^^^^^^^^
+   9 |   title:
+  10 |     "Book Your Sauna Experience | BanyaHouse – Mobile Sauna Rentals Topeka",
+  11 |   description:
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/book/page.tsx [Client Component Browser]
+    ./app/book/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/book/page.tsx [Client Component SSR]
+    ./app/book/page.tsx [Server Component]
+[00:25:50.823] Server  LOG      ✓ Compiled in 11ms
+[00:26:57.446] Server  LOG      ✓ Compiled in 21ms
+[00:27:02.353] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/book color: rgb(120, 120, 120) color: inherit {"dp":"/book","o":"http://localhost:3000/book","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765912996815}
+[00:28:43.709] Server  LOG      ✓ Compiled in 11ms
+[00:28:51.827] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/gift-cards color: rgb(120, 120, 120) color: inherit {"dp":"/gift-cards","o":"http://localhost:3000/gift-cards","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765913106291}
+[00:28:52.494] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cities color: rgb(120, 120, 120) color: inherit {"dp":"/cities","o":"http://localhost:3000/cities","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765913106957}
+[00:28:53.491] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/how-it-works color: rgb(120, 120, 120) color: inherit {"dp":"/how-it-works","o":"http://localhost:3000/how-it-works","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765913107955}
+[00:28:55.376] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services color: rgb(120, 120, 120) color: inherit {"dp":"/services","o":"http://localhost:3000/services","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765913109839}
+[00:28:56.048] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765913110511}
+[00:30:27.369] Server  LOG      ✓ Compiled in 41ms
+[00:41:34.031] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:41:34.084] Server  LOG      ✓ Compiled in 11ms
+[00:41:34.574] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.598] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.603] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.610] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.615] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.620] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.626] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.631] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.637] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.642] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.647] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.652] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.657] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.662] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.668] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.673] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.678] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.682] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.687] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.692] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.697] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.702] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.706] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.711] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.718] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.733] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.738] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.744] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:41:34.744] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:41:34.744] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:41:34.748] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.767] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.769] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.981] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.982] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.983] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.986] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.990] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.991] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.993] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.995] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.998] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:34.999] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.001] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.002] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.006] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.010] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.011] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.013] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.014] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.016] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.016] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.018] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.044] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[00:41:35.173] Browser ERROR   uncaughtError: Error: ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+
+[00:41:36.138] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:41:36.138] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:41:41.617] Server  LOG      ✓ Compiled in 39ms
+[00:42:36.242] Server  LOG      ✓ Compiled in 2ms
+[01:00:55.118] Server  LOG      ✓ Compiled in 3ms
+[01:00:55.626] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:56.143] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:00:56.143] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:00:56.143] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765915030262}

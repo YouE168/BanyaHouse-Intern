@@ -1,6 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Flame, Users, Gift, Check } from "lucide-react";
 import LocationSection from "@/components/LocationSection";
+
+export const metadata: Metadata = {
+  title: "BanyaHouse – Premium Mobile Sauna Rentals in Topeka, KS",
+  description:
+    "Experience luxury mobile sauna and cold plunge rentals in Topeka, Kansas. Book private sessions, delivered experiences, and wellness retreats. Call (785) 501-3414.",
+  keywords:
+    "mobile sauna, sauna rental, banya, cold plunge, wellness, Topeka Kansas, sauna delivery",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://banyahouse.com/",
+    siteName: "BanyaHouse",
+    title: "Premium Mobile Sauna Rentals in Topeka, KS",
+    description: "Luxury sauna and cold plunge experiences delivered to you",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "BanyaHouse Mobile Sauna",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://banyahouse.com/",
+  },
+};
 
 export default function Home() {
   return (

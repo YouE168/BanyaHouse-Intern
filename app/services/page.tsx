@@ -1,5 +1,20 @@
 import { Check } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services & Pricing | BanyaHouse – Mobile Sauna Rentals Topeka, KS",
+  description:
+    "Explore our mobile sauna rental services and pricing in Topeka, Kansas. Private group sessions, delivered experiences, hourly and overnight rentals starting at $75/hour.",
+  alternates: {
+    canonical: "https://banyahouse.com/services/",
+  },
+  openGraph: {
+    title: "Services & Pricing | BanyaHouse",
+    description: "Mobile sauna rental services and pricing in Topeka, Kansas",
+    url: "https://banyahouse.com/services/",
+  },
+};
 
 export default function ServicesPage() {
   return (

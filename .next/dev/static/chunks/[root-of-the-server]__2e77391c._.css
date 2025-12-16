@@ -827,10 +827,6 @@
     overflow: hidden;
   }
 
-  .scroll-smooth {
-    scroll-behavior: smooth;
-  }
-
   .rounded {
     border-radius: .25rem;
   }
