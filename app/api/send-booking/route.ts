@@ -7,41 +7,93 @@ export async function POST(request: Request) {
   console.log('🔍 API Route called');
   
   try {
-    // Check if API key exists
     if (!process.env.RESEND_API_KEY) {
       console.error('❌ RESEND_API_KEY is not set!');
       return NextResponse.json({ 
-        error: 'Server configuration error: Missing API key',
-        details: 'RESEND_API_KEY environment variable is not set'
+        error: 'Server configuration error: Missing API key'
       }, { status: 500 });
     }
 
-    console.log('✅ API Key exists');
-
     const body = await request.json();
-    console.log('📦 Request body:', body);
+    console.log('📦 Request body received');
 
     const { name, email, phone, serviceType, date, duration, guests, location, addOns, message } = body;
 
     console.log('📧 Attempting to send email...');
 
+    // IMPORTANT: Change the 'from' address to match your verified domain
+    // For now, using onboarding@resend.dev with 'to' as your email
     const { data, error } = await resend.emails.send({
-      from: 'BanyaHouse Bookings <onboarding@resend.dev>',
-      to: ['topmobilesauna@gmail.com'],
-      replyTo: email,
-      subject: `New Booking Request from ${name}`,
+      from: 'Acme <onboarding@resend.dev>', // Resend requires this exact format for test domain
+      to: ['topmobilesauna@gmail.com'], // Your email
+      replyTo: email, // Customer's email for replies
+      subject: `🔥 New Sauna Booking Request from ${name}`,
       html: `
-        <h2>New Booking Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Service Type:</strong> ${serviceType}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Duration:</strong> ${duration} hours</p>
-        <p><strong>Number of Guests:</strong> ${guests}</p>
-        <p><strong>Location:</strong> ${location}</p>
-        ${addOns && addOns.length > 0 ? `<p><strong>Add-Ons:</strong> ${addOns.join(', ')}</p>` : ''}
-        ${message ? `<p><strong>Special Requests:</strong> ${message}</p>` : ''}
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: #8B4513; color: white; padding: 20px; border-radius: 5px; }
+            .content { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 5px; }
+            .section { margin: 15px 0; }
+            .label { font-weight: bold; color: #8B4513; }
+            .footer { text-align: center; color: #666; font-size: 12px; margin-top: 20px; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1>🔥 New Sauna Booking Request</h1>
+            </div>
+            
+            <div class="content">
+              <div class="section">
+                <h2>Customer Information</h2>
+                <p><span class="label">Name:</span> ${name}</p>
+                <p><span class="label">Email:</span> ${email}</p>
+                <p><span class="label">Phone:</span> ${phone}</p>
+              </div>
+              
+              <div class="section">
+                <h2>Booking Details</h2>
+                <p><span class="label">Service Type:</span> ${serviceType === 'private' ? 'Private Group Session' : 'Delivered & Setup'}</p>
+                <p><span class="label">Date:</span> ${new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}</p>
+                <p><span class="label">Duration:</span> ${duration === '2' ? '2-4 Hours' : duration === '24' ? '24 Hours (Overnight)' : '3 Days'}</p>
+                <p><span class="label">Number of Guests:</span> ${guests}</p>
+                <p><span class="label">Location:</span> ${location}</p>
+              </div>
+              
+              ${addOns && addOns.length > 0 ? `
+              <div class="section">
+                <h2>Add-Ons Requested</h2>
+                <ul>
+                  ${addOns.map((addOn: string) => `<li>${addOn}</li>`).join('')}
+                </ul>
+              </div>
+              ` : ''}
+              
+              ${message ? `
+              <div class="section">
+                <h2>Special Requests</h2>
+                <p>${message}</p>
+              </div>
+              ` : ''}
+            </div>
+            
+            <div class="footer">
+              <p>This booking request was submitted through banyahouse.com/book</p>
+              <p>Reply directly to this email to contact ${name}</p>
+            </div>
+          </div>
+        </body>
+        </html>
       `,
     });
 
@@ -65,7 +117,6 @@ export async function POST(request: Request) {
   }
 }
 
-// Add GET method for testing
 export async function GET() {
   return NextResponse.json({ 
     status: 'API route is working',
