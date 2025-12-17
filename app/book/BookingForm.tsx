@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, Clock, Users, MapPin } from "lucide-react";
+import { Clock, Users, MapPin } from "lucide-react";
+import ModernCalendar from "./ModernCalendar";
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -32,6 +33,11 @@ export default function BookingForm() {
 
     if (!formData.waiverAccepted) {
       alert("Please accept the liability waiver to continue.");
+      return;
+    }
+
+    if (!formData.date) {
+      alert("Please select a date.");
       return;
     }
 
@@ -161,28 +167,36 @@ export default function BookingForm() {
         </div>
       </div>
 
+      {/* Calendar Section */}
+      <div className="mb-8">
+        <h3 className="text-lg font-semibold mb-4 text-foreground">
+          Select Your Date *
+        </h3>
+        <ModernCalendar
+          selectedDate={formData.date}
+          onDateSelect={(date) => setFormData({ ...formData, date })}
+          bookedDates={[]} // This will be populated from Google Calendar later
+          minDate={new Date(Date.now() + 86400000).toISOString().split("T")[0]} // Tomorrow
+        />
+        {formData.date && (
+          <p className="text-sm text-foreground mt-4 font-medium">
+            Selected:{" "}
+            {new Date(formData.date + "T00:00:00").toLocaleDateString("en-US", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
+        )}
+        {formData.serviceType === "delivered" && (
+          <p className="text-xs text-muted-foreground mt-2">
+            Weekdays: Drop-off/pick-up after 4pm | Weekends: Anytime
+          </p>
+        )}
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <label
-            htmlFor="date"
-            className="block text-sm font-semibold mb-2 flex items-center gap-2 text-foreground"
-          >
-            <Calendar size={16} /> Preferred Date *
-          </label>
-          <input
-            id="date"
-            type="date"
-            required
-            value={formData.date}
-            onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-            className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-          />
-          {formData.serviceType === "delivered" && (
-            <p className="text-xs text-muted-foreground mt-2">
-              Weekdays: Drop-off/pick-up after 4pm | Weekends: Anytime
-            </p>
-          )}
-        </div>
         <div>
           <label
             htmlFor="duration"
@@ -203,9 +217,6 @@ export default function BookingForm() {
             <option value="72">3 Days</option>
           </select>
         </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div>
           <label
             htmlFor="guests"
@@ -228,25 +239,26 @@ export default function BookingForm() {
             ))}
           </select>
         </div>
-        <div>
-          <label
-            htmlFor="location"
-            className="block text-sm font-semibold mb-2 flex items-center gap-2 text-foreground"
-          >
-            <MapPin size={16} /> Location *
-          </label>
-          <input
-            id="location"
-            type="text"
-            required
-            value={formData.location}
-            onChange={(e) =>
-              setFormData({ ...formData, location: e.target.value })
-            }
-            className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-            placeholder="Your address"
-          />
-        </div>
+      </div>
+
+      <div className="mb-6">
+        <label
+          htmlFor="location"
+          className="block text-sm font-semibold mb-2 flex items-center gap-2 text-foreground"
+        >
+          <MapPin size={16} /> Location *
+        </label>
+        <input
+          id="location"
+          type="text"
+          required
+          value={formData.location}
+          onChange={(e) =>
+            setFormData({ ...formData, location: e.target.value })
+          }
+          className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+          placeholder="Your address"
+        />
       </div>
 
       {/* Add-Ons Section */}
@@ -338,7 +350,8 @@ export default function BookingForm() {
 
       <button
         type="submit"
-        className="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition"
+        disabled={!formData.date}
+        className="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Request Booking
       </button>
