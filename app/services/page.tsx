@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Explore our mobile sauna rental services and pricing in Topeka, Kansas. Private group sessions, delivered experiences, hourly and overnight rentals starting at $75/hour.",
   alternates: {
-    canonical: "https://banyahouse.com/services/",
+    canonical: "https://banyahouse.com/services",
   },
   openGraph: {
     title: "Services & Pricing | BanyaHouse",

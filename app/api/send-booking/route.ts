@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, phone, serviceType, date, duration, guests, location, addOns, message } = body;
 
-    // Format the date nicely
+    // Format the date 
     const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     });
 
     const { data, error } = await resend.emails.send({
-      from: 'BanyaHouse Bookings <bookings@banyahouse.com>', // Now using your verified domain!
+      from: 'BanyaHouse Bookings <bookings@banyahouse.com>', 
       to: ['topmobilesauna@gmail.com'],
       replyTo: email,
       subject: `🔥 New Sauna Booking Request - ${name} - ${formattedDate}`,

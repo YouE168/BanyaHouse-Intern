@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Schedule your private sauna session or delivery in Topeka, KS. Choose from 2-hour sessions, overnight rentals, or multi-day experiences. Call (785) 501-3414 to book.",
   alternates: {
-    canonical: "https://banyahouse.com/book/",
+    canonical: "https://banyahouse.com/book",
   },
   openGraph: {
     title: "Book Your Sauna Experience | BanyaHouse",

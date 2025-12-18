@@ -1,6 +1,21 @@
 "use client";
 
 import { Gift } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gift Cards | BanyaHouse",
+  description:
+    "Give the gift of wellness with BanyaHouse mobile sauna gift cards. Perfect for birthdays, holidays, and special occasions. Available in $100, $300, and $500 denominations.",
+  alternates: {
+    canonical: "https://banyahouse.com/gift-cards",
+  },
+  openGraph: {
+    title: "Gift Cards | BanyaHouse",
+    description: "Give the gift of wellness and relaxation",
+    url: "https://banyahouse.com/gift-cards",
+  },
+};
 
 const openVenmo = (amount: number) => {
   const venmoUsername = "banyahouse";

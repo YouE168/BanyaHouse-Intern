@@ -1,16 +1,56 @@
-export default function sitemap() {
+import { MetadataRoute } from 'next';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://banyahouse.com';
+  
   return [
     {
-      url: 'https://banyahouse.vercel.app',
+      url: baseUrl,
       lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
     },
     {
-      url: 'https://banyahouse.vercel.app/gift-cards',
+      url: `${baseUrl}/book`,
       lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
-      url: 'https://banyahouse.vercel.app/contact',
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
-  ]
+    {
+      url: `${baseUrl}/how-it-works`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/gift-cards`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+  ];
 }

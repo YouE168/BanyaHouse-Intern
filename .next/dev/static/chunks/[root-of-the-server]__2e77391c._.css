@@ -1408,10 +1408,6 @@
     transition-duration: .2s;
   }
 
-  .running {
-    animation-play-state: running;
-  }
-
   @media (hover: hover) {
     .group-hover\:text-primary:is(:where(.group):hover *) {
       color: var(--primary);

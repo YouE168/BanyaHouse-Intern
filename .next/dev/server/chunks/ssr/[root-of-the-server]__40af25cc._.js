@@ -99,7 +99,7 @@ const metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://banyahouse.com/",
+        url: "https://banyahouse.com",
         siteName: "BanyaHouse",
         title: "Premium Mobile Sauna Rentals in Topeka, KS",
         description: "Luxury sauna and cold plunge experiences delivered to you",
