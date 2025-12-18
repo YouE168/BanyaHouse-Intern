@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     });
 
     const { data, error } = await resend.emails.send({
-      from: 'BanyaHouse Bookings <bookings@banyahouse.com>', 
+      from: "Banya House <booking@banyahouse.com>",
       to: ['topmobilesauna@gmail.com'],
       replyTo: email,
       subject: `🔥 New Sauna Booking Request - ${name} - ${formattedDate}`,
