@@ -3,15 +3,15 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services & Pricing | BanyaHouse – Mobile Sauna Rentals Topeka, KS",
+  title: "Services & Pricing | BanyaHouse Mobile Sauna Rentals Topeka",
   description:
-    "Explore our mobile sauna rental services and pricing in Topeka, Kansas. Private group sessions, delivered experiences, hourly and overnight rentals starting at $75/hour.",
+    "Explore our mobile sauna services and pricing in Topeka, Kansas. Private sessions, delivered experiences, hourly and overnight rentals starting at $75/hour.",
   alternates: {
     canonical: "https://banyahouse.com/services",
   },
   openGraph: {
     title: "Services & Pricing | BanyaHouse",
-    description: "Mobile sauna rental services and pricing in Topeka, Kansas",
+    description: "Mobile sauna services and pricing in Topeka, Kansas",
     url: "https://banyahouse.com/services/",
   },
 };
@@ -22,10 +22,10 @@ export default function ServicesPage() {
       <section className="py-12 md:py-16 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Services & Rentals
+            Services & Pricing
           </h1>
           <p className="text-lg opacity-90">
-            Explore our offerings and pricing
+            Premium wellness experiences delivered to you
           </p>
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function ServicesPage() {
               </h2>
               <p className="text-muted-foreground mb-8 text-xl">
                 Join us for exclusive sauna experiences. Perfect for friends,
-                family, or corporate wellness.
+                family, or corporate wellness events.
               </p>
 
               <h3 className="font-bold text-2xl mb-6 text-foreground">
@@ -107,7 +107,7 @@ export default function ServicesPage() {
                 Book a Session
               </Link>
             </div>
-            <div className="bg-muted/50 rounded-xl overflow-hidden h-full min-h-[600px] flex items-center justify-centerr">
+            <div className="bg-muted/50 rounded-xl overflow-hidden h-full min-h-[600px] flex items-center justify-center">
               <img
                 src="/pictures/people-enjoying-sauna-session-relaxation.jpg"
                 alt="Private sauna session"
@@ -127,11 +127,11 @@ export default function ServicesPage() {
 
             <div>
               <h2 className="text-3xl font-bold mb-6 text-foreground">
-                Delivered Sauna Experience
+                Delivered Experience
               </h2>
               <p className="text-muted-foreground mb-4 text-lg">
                 Perfect for parties, retreats, events, and extended relaxation
-                sessions at your home or venue.
+                at your home or venue.
               </p>
 
               <div className="bg-accent/10 border border-accent rounded-lg p-8 mb-6">
@@ -197,13 +197,13 @@ export default function ServicesPage() {
           {/* Pricing Section */}
           <div className="mt-20 pt-20 border-t border-border">
             <h2 className="text-4xl font-bold mb-8 text-center text-foreground">
-              Mobile Sauna Rental Pricing
+              Pricing
             </h2>
 
             {/* Delivery Charges */}
             <div className="bg-secondary/10 border border-secondary rounded-lg p-8 mb-12">
               <h3 className="font-bold text-2xl mb-4 text-foreground">
-                🚚 Delivery Charges
+                🚚 Delivery
               </h3>
               <p className="text-foreground mb-2 text-lg">
                 First 30 miles (one way):{" "}
@@ -221,7 +221,7 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               <div className="bg-card rounded-xl p-8 border-2 border-primary shadow-lg">
                 <h3 className="font-bold text-2xl mb-3 text-foreground">
-                  Hourly Rental
+                  Hourly
                 </h3>
                 <div className="text-4xl font-bold text-primary mb-4">
                   $75<span className="text-xl">/hour</span>
@@ -235,7 +235,7 @@ export default function ServicesPage() {
 
               <div className="bg-card rounded-xl p-8 border-2 border-primary shadow-lg">
                 <h3 className="font-bold text-2xl mb-3 text-foreground">
-                  Overnight Rental
+                  Overnight
                 </h3>
                 <div className="text-4xl font-bold text-primary mb-4">
                   $200<span className="text-xl">/night</span>
@@ -268,7 +268,7 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <div className="bg-card rounded-xl p-8 border border-border">
                 <h3 className="font-bold text-2xl mb-3 text-foreground">
-                  Weekly Rental (5 Nights)
+                  5-Night Package
                 </h3>
                 <div className="text-4xl font-bold text-primary mb-4">$600</div>
                 <p className="text-muted-foreground">
@@ -278,10 +278,10 @@ export default function ServicesPage() {
 
               <div className="bg-card rounded-xl p-8 border border-border">
                 <h3 className="font-bold text-2xl mb-3 text-foreground">
-                  Weekly Rental (7 Nights)
+                  7-Night Package
                 </h3>
                 <div className="text-4xl font-bold text-primary mb-4">$700</div>
-                <p className="text-muted-foreground">Full 7-night experience</p>
+                <p className="text-muted-foreground">Full week experience</p>
               </div>
             </div>
 
@@ -290,7 +290,7 @@ export default function ServicesPage() {
                 href="/book"
                 className="inline-flex items-center justify-center bg-primary text-primary-foreground px-12 py-5 rounded-lg font-semibold text-xl hover:opacity-90 transition"
               >
-                Book Your Experience Now
+                Book Your Experience
               </Link>
               <p className="text-muted-foreground mt-4 text-lg">
                 Questions?{" "}
