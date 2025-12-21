@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, phone, serviceType, date, duration, guests, location, addOns, message } = body;
 
-    // Format the date 
+    // format the date 
     const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
