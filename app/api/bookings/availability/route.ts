@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+// This route is now optional since we removed time slot selection
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -13,10 +14,10 @@ export async function GET(request: Request) {
       );
     }
 
-    // get all confirmed bookings for the specified date
+    // Get all bookings for the specified date
     const { data: bookings, error } = await supabase
       .from('bookings')
-      .select('time_slot')
+      .select('*')
       .eq('booking_date', date)
       .in('status', ['confirmed', 'pending']);
 
@@ -25,13 +26,12 @@ export async function GET(request: Request) {
       throw error;
     }
 
-    // Extract just the time slots
-    const bookedTimeSlots = bookings?.map(b => b.time_slot) || [];
-
+    // Return basic availability info
     return NextResponse.json({ 
       date,
-      bookedTimeSlots,
-      availableSlots: [], // Frontend will calculate this
+      bookingCount: bookings?.length || 0,
+      bookings: bookings || [],
+      bookedTimeSlots: [], 
     });
   } catch (error) {
     console.error('Availability check error:', error);

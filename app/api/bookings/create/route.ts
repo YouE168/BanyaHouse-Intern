@@ -5,36 +5,20 @@ export async function POST(request: Request) {
   try {
     const bookingData = await request.json();
 
-    // Validate required fields
-    if (!bookingData.date || !bookingData.timeSlot || !bookingData.name || !bookingData.email) {
+    // Validate required fields (removed timeSlot requirement)
+    if (!bookingData.date || !bookingData.name || !bookingData.email || !bookingData.phone) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
     }
 
-    // Check if time slot is still available (double-check)
-    const { data: existingBooking } = await supabase
-      .from('bookings')
-      .select('id')
-      .eq('booking_date', bookingData.date)
-      .eq('time_slot', bookingData.timeSlot)
-      .in('status', ['confirmed', 'pending'])
-      .single();
-
-    if (existingBooking) {
-      return NextResponse.json(
-        { error: 'This time slot is no longer available. Please select another time.' },
-        { status: 409 }
-      );
-    }
-
-    // Create the booking
+    // Create the booking (timeSlot is now optional/null)
     const { data: booking, error } = await supabase
       .from('bookings')
       .insert({
         booking_date: bookingData.date,
-        time_slot: bookingData.timeSlot,
+        time_slot: bookingData.timeSlot || null, // Allow null or empty time slot
         service_type: bookingData.serviceType,
         duration: bookingData.duration,
         guests: parseInt(bookingData.guests),
@@ -44,7 +28,7 @@ export async function POST(request: Request) {
         location: bookingData.location,
         add_ons: bookingData.addOns || [],
         special_requests: bookingData.message || null,
-        status: 'confirmed',
+        status: 'pending', // Changed to 'pending' since no specific time is confirmed yet
       })
       .select()
       .single();
@@ -56,7 +40,12 @@ export async function POST(request: Request) {
 
     // Send confirmation emails
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/send-confirmation`, {
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 
+                      (process.env.NODE_ENV === 'production' 
+                        ? 'https://banyahouse.com' 
+                        : 'http://localhost:3000');
+      
+      await fetch(`${baseUrl}/api/send-confirmation`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(booking),
@@ -69,21 +58,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ 
       success: true, 
       booking,
-      message: 'Booking created successfully'
+      message: 'Booking request received! We will contact you to confirm the delivery time.'
     });
   } catch (error: any) {
     console.error('Booking creation error:', error);
-    
-    // Handle unique constraint violation
-    if (error?.code === '23505') {
-      return NextResponse.json(
-        { error: 'This time slot was just booked. Please select another time.' },
-        { status: 409 }
-      );
-    }
 
     return NextResponse.json(
-      { error: 'Failed to create booking. Please try again.' },
+      { error: 'Failed to create booking. Please try again or call us at (785) 501-3414.' },
       { status: 500 }
     );
   }
