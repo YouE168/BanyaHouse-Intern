@@ -1185,10 +1185,6 @@
     padding-block: calc(var(--spacing) * 5);
   }
 
-  .py-8 {
-    padding-block: calc(var(--spacing) * 8);
-  }
-
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
@@ -1391,10 +1387,6 @@
     opacity: .1;
   }
 
-  .opacity-50 {
-    opacity: .5;
-  }
-
   .opacity-80 {
     opacity: .8;
   }
@@ -1513,18 +1505,6 @@
   @media (hover: hover) {
     .hover\:border-primary:hover {
       border-color: var(--primary);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:border-primary\/50:hover {
-      border-color: var(--primary);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:border-primary\/50:hover {
-        border-color: color-mix(in oklab, var(--primary) 50%, transparent);
-      }
     }
   }
 

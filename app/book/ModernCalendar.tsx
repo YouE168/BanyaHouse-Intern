@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface CalendarProps {
   selectedDate: string;
   onDateSelect: (date: string) => void;
-  bookedDates?: string[]; // Array of dates in YYYY-MM-DD format
+  bookedDates?: string[]; // Array of dates in YYYY-MM-DD
   minDate?: string;
 }
 

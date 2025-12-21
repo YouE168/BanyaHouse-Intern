@@ -1,5 +1,4 @@
 {
-  "/api/bookings/availability/route": "app/api/bookings/availability/route.js",
   "/book/page": "app/book/page.js",
   "/page": "app/page.js"
 }

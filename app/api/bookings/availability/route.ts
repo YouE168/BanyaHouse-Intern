@@ -13,7 +13,7 @@ export async function GET(request: Request) {
       );
     }
 
-    // Get all confirmed bookings for the specified date
+    // get all confirmed bookings for the specified date
     const { data: bookings, error } = await supabase
       .from('bookings')
       .select('time_slot')
