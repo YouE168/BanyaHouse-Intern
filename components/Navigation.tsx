@@ -1,29 +1,32 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, X, Phone } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
+    { href: "/services", label: "Services & Pricing" }, // ← Changed display name
     { href: "/how-it-works", label: "How It Works" },
     { href: "/cities", label: "Service Areas" },
     { href: "/gift-cards", label: "Gift Cards" },
     { href: "/about", label: "About" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
-  ]
+  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 gap-4">
-          <Link href="/" className="font-bold text-xl flex items-center gap-2 flex-shrink-0">
+          <Link
+            href="/"
+            className="font-bold text-xl flex items-center gap-2 flex-shrink-0"
+          >
             <Image
               src="/pictures/logo.jpeg"
               alt="BanyaHouse Mobile Sauna Logo"
@@ -102,5 +105,5 @@ export default function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }

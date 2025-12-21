@@ -164,8 +164,6 @@
 
 @layer theme {
   :root, :host {
-    --color-red-100: #ffe2e2;
-    --color-red-400: #ff6568;
     --color-blue-50: #eff6ff;
     --color-blue-200: #bedbff;
     --color-blue-400: #54a2ff;
@@ -217,8 +215,6 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
-      --color-red-100: lab(92.243% 10.2865 3.83865);
-      --color-red-400: lab(63.7053% 60.745 31.3109);
       --color-blue-50: lab(96.492% -1.14644 -5.11479);
       --color-blue-200: lab(86.15% -4.04379 -21.0797);
       --color-blue-400: lab(65.0361% -1.42065 -56.9802);
@@ -1130,10 +1126,6 @@
     }
   }
 
-  .bg-red-100 {
-    background-color: var(--color-red-100);
-  }
-
   .bg-secondary {
     background-color: var(--secondary);
   }
@@ -1438,10 +1430,6 @@
     .text-primary-foreground\/80 {
       color: color-mix(in oklab, var(--primary-foreground) 80%, transparent);
     }
-  }
-
-  .text-red-400 {
-    color: var(--color-red-400);
   }
 
   .text-secondary {
