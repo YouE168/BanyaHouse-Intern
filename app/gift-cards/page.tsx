@@ -1,27 +1,19 @@
+"use client";
+
 import { Gift } from "lucide-react";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Gift Cards | BanyaHouse",
-  description:
-    "Give the gift of wellness with BanyaHouse gift cards. Perfect for mobile sauna experiences in Topeka, Kansas.",
-  alternates: {
-    canonical: "https://banyahouse.com/gift-cards",
-  },
-};
-
-const openVenmo = (amount: number) => {
-  const venmoUsername = "banyahouse";
-  const note = "BanyaHouse Gift Card";
-
-  const url = `https://venmo.com/${venmoUsername}?txn=pay&amount=${amount}&note=${encodeURIComponent(
-    note
-  )}`;
-
-  window.open(url, "_blank");
-};
 
 export default function GiftCardsPage() {
+  const openVenmo = (amount: number) => {
+    const venmoUsername = "banyahouse";
+    const note = "BanyaHouse Gift Card";
+
+    const url = `https://venmo.com/${venmoUsername}?txn=pay&amount=${amount}&note=${encodeURIComponent(
+      note
+    )}`;
+
+    window.open(url, "_blank");
+  };
+
   const giftCards = [
     { amount: 100, label: "$100", session: "Perfect for one person" },
     { amount: 300, label: "$300", session: "Great for two people" },
@@ -94,7 +86,7 @@ export default function GiftCardsPage() {
               </li>
               <li className="flex gap-4">
                 <span className="font-bold text-primary text-xl">5.</span>
-                <span>No expiration – valid indefinitely</span>
+                <span>No expiration — valid indefinitely</span>
               </li>
             </ul>
           </div>
