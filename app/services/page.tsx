@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services & Pricing | BanyaHouse Mobile Sauna Rentals Topeka",
+  title: "Services & Pricing | BanyaHouse",
   description:
     "Explore our mobile sauna services and pricing in Topeka, Kansas. Private sessions, delivered experiences, hourly and overnight rentals starting at $75/hour.",
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Services & Pricing | BanyaHouse",
     description: "Mobile sauna services and pricing in Topeka, Kansas",
-    url: "https://banyahouse.com/services/",
+    url: "https://banyahouse.com/services",
   },
 };
 
