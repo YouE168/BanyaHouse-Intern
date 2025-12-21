@@ -13,7 +13,7 @@ export async function generateMetadata({
   // Redirect Topeka to homepage to avoid keyword cannibalization
   if (slug === "topeka") {
     permanentRedirect("/");
-
+  }
   const metaData = {
     "kansas-city": {
       title: "Mobile Sauna Rentals in Kansas City | BanyaHouse",
