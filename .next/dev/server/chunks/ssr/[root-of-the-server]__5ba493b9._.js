@@ -14,7 +14,9 @@ __turbopack_context__.n(__turbopack_context__.i("[project]/app/layout.tsx [app-r
 
 __turbopack_context__.s([
     "default",
-    ()=>HowItWorksPage
+    ()=>HowItWorksPage,
+    "metadata",
+    ()=>metadata
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-rsc] (ecmascript) <export default as CheckCircle>");
@@ -23,6 +25,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-rsc] (ecmascript) <export default as Users>");
 ;
 ;
+const metadata = {
+    title: "How It Works | BanyaHouse",
+    description: "Learn how to book and enjoy your mobile sauna experience in Topeka. Simple 4-step process: book online, we deliver and setup, you relax and enjoy premium wellness.",
+    alternates: {
+        canonical: "https://banyahouse.com/how-it-works"
+    },
+    openGraph: {
+        title: "How It Works | BanyaHouse",
+        description: "Simple 4-step process to book your mobile sauna experience in Topeka",
+        url: "https://banyahouse.com/how-it-works"
+    }
+};
 function HowItWorksPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         children: [
@@ -36,26 +50,26 @@ function HowItWorksPage() {
                             children: "How It Works"
                         }, void 0, false, {
                             fileName: "[project]/app/how-it-works/page.tsx",
-                            lineNumber: 8,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg opacity-90",
-                            children: "From booking to enjoying your sauna experience"
+                            children: "Learn how to book and enjoy your mobile sauna experience in Topeka. Simple 4-step process: book online, we deliver and setup, you relax and enjoy premium wellness."
                         }, void 0, false, {
                             fileName: "[project]/app/how-it-works/page.tsx",
-                            lineNumber: 9,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/how-it-works/page.tsx",
-                    lineNumber: 7,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/how-it-works/page.tsx",
-                lineNumber: 6,
+                lineNumber: 22,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -99,12 +113,12 @@ function HowItWorksPage() {
                                                 children: step.num
                                             }, void 0, false, {
                                                 fileName: "[project]/app/how-it-works/page.tsx",
-                                                lineNumber: 44,
+                                                lineNumber: 64,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 43,
+                                            lineNumber: 63,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -112,7 +126,7 @@ function HowItWorksPage() {
                                             children: step.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 48,
+                                            lineNumber: 68,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -120,18 +134,18 @@ function HowItWorksPage() {
                                             children: step.desc
                                         }, void 0, false, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 49,
+                                            lineNumber: 71,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 62,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/how-it-works/page.tsx",
-                            lineNumber: 15,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -142,7 +156,7 @@ function HowItWorksPage() {
                                     children: "Setup & Requirements"
                                 }, void 0, false, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -155,7 +169,7 @@ function HowItWorksPage() {
                                                     children: "📍 Sauna Space Requirements"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 58,
+                                                    lineNumber: 82,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -165,40 +179,40 @@ function HowItWorksPage() {
                                                             children: "• Flat, level parking space"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 60,
+                                                            lineNumber: 86,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Minimum 15' x 15' area"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 61,
+                                                            lineNumber: 87,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Easy access for our trailer"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 62,
+                                                            lineNumber: 88,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Self-sufficient (no electrical outlet needed)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 63,
+                                                            lineNumber: 89,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 59,
+                                                    lineNumber: 85,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 57,
+                                            lineNumber: 81,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -208,7 +222,7 @@ function HowItWorksPage() {
                                                     children: "💧 Cold Plunge Requirements"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 67,
+                                                    lineNumber: 93,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -218,34 +232,34 @@ function HowItWorksPage() {
                                                             children: "• Water line connection (if cold plunge is added)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 69,
+                                                            lineNumber: 97,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Drain nearby (or we can manage)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 70,
+                                                            lineNumber: 98,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• We provide ice for first day"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 71,
+                                                            lineNumber: 99,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Confirm water availability in advance"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 72,
+                                                            lineNumber: 100,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 68,
+                                                    lineNumber: 96,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -253,25 +267,25 @@ function HowItWorksPage() {
                                                     children: "*Cold plunge is an optional add-on"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 74,
+                                                    lineNumber: 102,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 66,
+                                            lineNumber: 92,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 56,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/how-it-works/page.tsx",
-                            lineNumber: 54,
+                            lineNumber: 76,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -282,7 +296,7 @@ function HowItWorksPage() {
                                     children: "What's Included"
                                 }, void 0, false, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -305,7 +319,7 @@ function HowItWorksPage() {
                                                     size: 24
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 126,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -313,24 +327,24 @@ function HowItWorksPage() {
                                                     children: item
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 130,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 125,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 81,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/how-it-works/page.tsx",
-                            lineNumber: 79,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -341,7 +355,7 @@ function HowItWorksPage() {
                                     children: "Rental Options & Add-Ons"
                                 }, void 0, false, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 137,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -354,7 +368,7 @@ function HowItWorksPage() {
                                                     children: "📅 Rental Durations"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 105,
+                                                    lineNumber: 142,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -371,7 +385,7 @@ function HowItWorksPage() {
                                                                     size: 24
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                                    lineNumber: 113,
+                                                                    lineNumber: 152,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -379,24 +393,24 @@ function HowItWorksPage() {
                                                                     children: item
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                                    lineNumber: 114,
+                                                                    lineNumber: 156,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 112,
+                                                            lineNumber: 151,
                                                             columnNumber: 21
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 106,
+                                                    lineNumber: 145,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 104,
+                                            lineNumber: 141,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -406,7 +420,7 @@ function HowItWorksPage() {
                                                     children: "➕ Optional Add-Ons"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 120,
+                                                    lineNumber: 162,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -416,46 +430,46 @@ function HowItWorksPage() {
                                                             children: "• Cold plunge with ice setup"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 122,
+                                                            lineNumber: 166,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Insulated dressing room"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 167,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Chairs"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 124,
+                                                            lineNumber: 168,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "• Sauna attendant (tends the fire for a seamless experience)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                                            lineNumber: 125,
+                                                            lineNumber: 169,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 165,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 161,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 103,
+                                    lineNumber: 140,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -466,7 +480,7 @@ function HowItWorksPage() {
                                             children: "🕐 Delivery Schedule"
                                         }, void 0, false, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 131,
+                                            lineNumber: 177,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -476,14 +490,14 @@ function HowItWorksPage() {
                                                     children: "Weekdays:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 132,
-                                                    columnNumber: 59
+                                                    lineNumber: 181,
+                                                    columnNumber: 17
                                                 }, this),
                                                 " Drop-off and pick-up after 4pm"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 180,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -493,43 +507,43 @@ function HowItWorksPage() {
                                                     children: "Weekends:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                                    lineNumber: 133,
-                                                    columnNumber: 54
+                                                    lineNumber: 184,
+                                                    columnNumber: 17
                                                 }, this),
                                                 " Flexible scheduling available anytime"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/how-it-works/page.tsx",
-                                            lineNumber: 133,
+                                            lineNumber: 183,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/how-it-works/page.tsx",
-                                    lineNumber: 130,
+                                    lineNumber: 176,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/how-it-works/page.tsx",
-                            lineNumber: 101,
+                            lineNumber: 136,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/how-it-works/page.tsx",
-                    lineNumber: 14,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/how-it-works/page.tsx",
-                lineNumber: 13,
+                lineNumber: 33,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/how-it-works/page.tsx",
-        lineNumber: 5,
+        lineNumber: 21,
         columnNumber: 5
     }, this);
 }

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import BookingForm from "./BookingForm";
 
 export const metadata: Metadata = {
-  title:
-    "Book Your Sauna Experience | BanyaHouse – Mobile Sauna Rentals Topeka",
+  title: "Book Your Sauna Experience | BanyaHouse",
   description:
     "Schedule your private sauna session or delivery in Topeka, KS. Choose from 2-hour sessions, overnight rentals, or multi-day experiences. Call (785) 501-3414 to book.",
   alternates: {
@@ -27,7 +26,9 @@ export default function BookPage() {
             Book Your Sauna Experience
           </h1>
           <p className="text-lg opacity-90">
-            Schedule your private session or delivery today
+            Schedule your private sauna session or delivery in Topeka, KS.
+            Choose from 2-hour sessions, overnight rentals, or multi-day
+            experiences. Call (785) 501-3414 to book.
           </p>
         </div>
       </section>

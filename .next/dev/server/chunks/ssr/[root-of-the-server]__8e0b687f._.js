@@ -80,53 +80,62 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$componen
 
 __turbopack_context__.s([
     "default",
-    ()=>FAQPage
+    ()=>FAQPage,
+    "metadata",
+    ()=>metadata
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$accordion$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/accordion.tsx [app-rsc] (ecmascript)");
 ;
 ;
+const metadata = {
+    title: "FAQ | BanyaHouse",
+    description: "Frequently asked questions about our mobile sauna rentals in Topeka, Kansas. Learn about booking, pricing, safety, and more.",
+    alternates: {
+        canonical: "https://banyahouse.com/faq"
+    }
+};
 function FAQPage() {
     const faqs = [
         {
-            q: 'How many people can use the sauna at once?',
-            a: 'Our sauna comfortably accommodates 6 people. Larger groups can rotate through sessions for a seamless experience.'
+            q: "How many people can use the sauna at once?",
+            a: "Our sauna comfortably accommodates 6 people. Larger groups can rotate through sessions for a seamless experience."
         },
         {
-            q: 'What is included in the rental?',
-            a: 'Every rental includes: access to sauna & cold plunge, towels, wool sauna hats, lounging area, professional setup/teardown (for deliveries), and expert guidance on sauna use.'
+            q: "What is included in the rental?",
+            a: "Every rental includes: access to sauna & cold plunge, towels, wool sauna hats, lounging area, professional setup/teardown (for deliveries), and expert guidance on sauna use."
         },
         {
-            q: 'Do I need any prior experience?',
-            a: 'No experience necessary! Our team walks you through the entire process. We provide full guidance on sauna etiquette, temperature control, and safety.'
+            q: "Do I need any prior experience?",
+            a: "No experience necessary! Our team walks you through the entire process. We provide full guidance on sauna etiquette, temperature control, and safety."
         },
         {
-            q: 'What is the minimum age requirement?',
-            a: 'Adults 18+. Minors (13-17) are welcome with parental supervision. Special arrangements may be needed for groups.'
+            q: "What is the minimum age requirement?",
+            a: "Adults 18+. Minors (13-17) are welcome with parental supervision. Special arrangements may be needed for groups."
         },
         {
-            q: 'Can I cancel or reschedule?',
-            a: 'Yes! Cancellations up to 48 hours in advance receive a full refund. Rescheduling is available with 24 hours notice.'
+            q: "Can I cancel or reschedule?",
+            a: "Yes! Cancellations up to 48 hours in advance receive a full refund. Rescheduling is available with 24 hours notice."
         },
         {
-            q: 'What if I have health concerns?',
-            a: 'Saunas are generally safe, but consult your doctor if you have heart conditions, high blood pressure, or other concerns. Pregnant women should limit time to short sessions at lower temperatures.'
+            q: "What if I have health concerns?",
+            a: "Saunas are generally safe, but consult your doctor if you have heart conditions, high blood pressure, or other concerns. Pregnant women should limit time to short sessions at lower temperatures."
         },
         {
-            q: 'Do you offer sauna attendants?',
-            a: 'Yes! For an additional fee, we provide professional attendants who manage the fire and ensure optimal sauna conditions.'
+            q: "Do you offer sauna attendants?",
+            a: "Yes! For an additional fee, we provide professional attendants who manage the fire and ensure optimal sauna conditions."
         },
         {
-            q: 'What space do I need for delivery?',
-            a: 'We need a flat, level parking space of at least 15\'x15\' with easy access for our trailer. Cold plunge water line access is also required.'
+            q: "What space do I need for delivery?",
+            a: "We need a flat, level parking space of at least 15'x15' with easy access for our trailer. Cold plunge water line access is also required."
         },
         {
-            q: 'Can I book multiple days?',
-            a: 'We offer 2-4 hour sessions, 24-hour overnight rentals, and multi-day packages for extended wellness experiences.'
+            q: "Can I book multiple days?",
+            a: "We offer 2-4 hour sessions, 24-hour overnight rentals, and multi-day packages for extended wellness experiences."
         },
         {
-            q: 'Are gift cards available?',
-            a: 'Yes! We offer gift cards in any denomination. They never expire and are perfect for any occasion.'
+            q: "Are gift cards available?",
+            a: "Yes! We offer gift cards in any denomination. They never expire and are perfect for any occasion."
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -141,7 +150,7 @@ function FAQPage() {
                             children: "Frequently Asked Questions"
                         }, void 0, false, {
                             fileName: "[project]/app/faq/page.tsx",
-                            lineNumber: 56,
+                            lineNumber: 66,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -149,18 +158,18 @@ function FAQPage() {
                             children: "Everything you need to know about our sauna experiences"
                         }, void 0, false, {
                             fileName: "[project]/app/faq/page.tsx",
-                            lineNumber: 57,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/faq/page.tsx",
-                    lineNumber: 55,
+                    lineNumber: 65,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/faq/page.tsx",
-                lineNumber: 54,
+                lineNumber: 64,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -180,7 +189,7 @@ function FAQPage() {
                                         children: faq.q
                                     }, void 0, false, {
                                         fileName: "[project]/app/faq/page.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 84,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$accordion$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AccordionContent"], {
@@ -188,34 +197,34 @@ function FAQPage() {
                                         children: faq.a
                                     }, void 0, false, {
                                         fileName: "[project]/app/faq/page.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 87,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, i, true, {
                                 fileName: "[project]/app/faq/page.tsx",
-                                lineNumber: 65,
+                                lineNumber: 79,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/faq/page.tsx",
-                        lineNumber: 63,
+                        lineNumber: 77,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/faq/page.tsx",
-                    lineNumber: 62,
+                    lineNumber: 76,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/faq/page.tsx",
-                lineNumber: 61,
+                lineNumber: 75,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/faq/page.tsx",
-        lineNumber: 53,
+        lineNumber: 63,
         columnNumber: 5
     }, this);
 }

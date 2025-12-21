@@ -1,6 +1,16 @@
 "use client";
 
 import { Gift } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gift Cards | BanyaHouse",
+  description:
+    "Give the gift of wellness with BanyaHouse gift cards. Perfect for mobile sauna experiences in Topeka, Kansas.",
+  alternates: {
+    canonical: "https://banyahouse.com/gift-cards",
+  },
+};
 
 const openVenmo = (amount: number) => {
   const venmoUsername = "banyahouse";

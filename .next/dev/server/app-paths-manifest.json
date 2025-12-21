@@ -1,6 +1,6 @@
 {
-  "/about/page": "app/about/page.js",
+  "/api/bookings/availability/route": "app/api/bookings/availability/route.js",
+  "/api/bookings/create/route": "app/api/bookings/create/route.js",
   "/book/page": "app/book/page.js",
-  "/contact/page": "app/contact/page.js",
   "/page": "app/page.js"
 }

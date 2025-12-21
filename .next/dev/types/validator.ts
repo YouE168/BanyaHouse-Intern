@@ -137,6 +137,33 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/api/bookings/availability/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/bookings/availability">> = Specific
+  const handler = {} as typeof import("../../../app/api/bookings/availability/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/bookings/cancel/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/bookings/cancel">> = Specific
+  const handler = {} as typeof import("../../../app/api/bookings/cancel/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/bookings/create/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/bookings/create">> = Specific
+  const handler = {} as typeof import("../../../app/api/bookings/create/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/api/send-booking/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/send-booking">> = Specific

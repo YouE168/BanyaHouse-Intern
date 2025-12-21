@@ -2,6 +2,16 @@
 
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | BanyaHouse",
+  description:
+    "Get in touch with BanyaHouse. Call (785) 501-3414 or visit us at 3339 SW 34th Ct, Topeka, KS 66614.",
+  alternates: {
+    canonical: "https://banyahouse.com/contact",
+  },
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -69,6 +79,18 @@ export default function ContactPage() {
                 Topeka, KS 66614
               </p>
             </div>
+          </div>
+
+          <div className="mb-16">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12401.43524903484!2d-95.72581189100939!3d39.00712772326387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87bf1d5bbd6622a5%3A0xfbce6d00c70dc198!2sBanyaHouse%20%7C%20mobile%20sauna%20rental!5e0!3m2!1sen!2sus!4v1766275741389!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+            />
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">

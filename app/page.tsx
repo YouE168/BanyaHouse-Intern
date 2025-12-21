@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     url: "https://banyahouse.com",
     siteName: "BanyaHouse",
     title: "Premium Mobile Sauna Rentals in Topeka, KS",
-    description: "Luxury sauna and cold plunge experiences delivered to you",
+    description:
+      "Experience luxury mobile sauna and cold plunge rentals in Topeka, Kansas. Book private sessions, delivered experiences, and wellness retreats. Call (785) 501-3414.",
     images: [
       {
         url: "/og-image.jpg",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://banyahouse.com/",
+    canonical: "https://banyahouse.com",
   },
 };
 
@@ -47,9 +48,9 @@ export default function Home() {
                 Experience Premium Wellness
               </h1>
               <p className="text-lg md:text-xl opacity-95 mb-8 text-balance">
-                Delivered sauna and cold plunge experiences. Host your friends,
-                retreat with loved ones, or schedule private wellness sessions
-                in Topeka.
+                Experience luxury mobile sauna and cold plunge rentals in
+                Topeka, Kansas. Book private sessions, delivered experiences,
+                and wellness retreats. Call (785) 501-3414.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

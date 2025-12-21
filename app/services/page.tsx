@@ -25,7 +25,9 @@ export default function ServicesPage() {
             Services & Pricing
           </h1>
           <p className="text-lg opacity-90">
-            Premium wellness experiences delivered to you
+            Explore our mobile sauna rental services and pricing in Topeka,
+            Kansas. Private group sessions, delivered experiences, hourly and
+            overnight rentals starting at $75/hour.
           </p>
         </div>
       </section>

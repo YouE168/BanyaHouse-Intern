@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | BanyaHouse",
+  description:
+    "Learn about BanyaHouse and our mission to bring premium mobile sauna experiences to Topeka and surrounding Kansas communities.",
+  alternates: {
+    canonical: "https://banyahouse.com/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main>

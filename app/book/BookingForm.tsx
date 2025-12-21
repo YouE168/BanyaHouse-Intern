@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 import { Clock, Users, MapPin, X } from "lucide-react";
 import ModernCalendar from "./ModernCalendar";
 
+interface TimeSlot {
+  time: string;
+  available: boolean;
+}
+
 interface BookingFormProps {
   isPopup?: boolean;
   onClose?: () => void;
@@ -14,6 +19,8 @@ export default function BookingForm({
   onClose = () => {},
 }: BookingFormProps) {
   const [step, setStep] = useState<"date" | "time" | "details">("date");
+  const [bookedTimeSlots, setBookedTimeSlots] = useState<string[]>([]);
+  const [isCheckingAvailability, setIsCheckingAvailability] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,10 +36,34 @@ export default function BookingForm({
     message: "",
   });
 
-  // Get time constraints based on service type and date
-  const getTimeConstraints = () => {
-    if (!formData.date) return { min: "09:00", max: "20:00" };
+  // Fetch booked time slots when date changes
+  useEffect(() => {
+    async function fetchBookedSlots() {
+      if (!formData.date) return;
 
+      setIsCheckingAvailability(true);
+      try {
+        const response = await fetch(
+          `/api/bookings/availability?date=${formData.date}`
+        );
+        const data = await response.json();
+        setBookedTimeSlots(data.bookedTimeSlots || []);
+      } catch (error) {
+        console.error("Failed to fetch availability:", error);
+        setBookedTimeSlots([]);
+      } finally {
+        setIsCheckingAvailability(false);
+      }
+    }
+
+    fetchBookedSlots();
+  }, [formData.date]);
+
+  // Generate available time slots for selected date
+  const generateTimeSlots = (): TimeSlot[] => {
+    if (!formData.date) return [];
+
+    const slots: TimeSlot[] = [];
     const selectedDate = new Date(formData.date + "T00:00:00");
     const isWeekend =
       selectedDate.getDay() === 0 || selectedDate.getDay() === 6;
@@ -40,31 +71,59 @@ export default function BookingForm({
     if (formData.serviceType === "delivered") {
       // Delivered: After 4pm weekdays, anytime weekends
       if (isWeekend) {
-        return { min: "09:00", max: "20:00" };
+        const times = [
+          "8:00 AM",
+          "9:00 AM",
+          "10:00 AM",
+          "11:00 AM",
+          "12:00 PM",
+          "1:00 PM",
+          "2:00 PM",
+          "3:00 PM",
+          "4:00 PM",
+          "5:00 PM",
+          "6:00 PM",
+          "7:00 PM",
+          "8:00 PM",
+        ];
+        times.forEach((time) => {
+          const isBooked = bookedTimeSlots.includes(time);
+          slots.push({ time, available: !isBooked });
+        });
       } else {
-        return { min: "16:00", max: "20:00" };
+        const times = ["4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM"];
+        times.forEach((time) => {
+          const isBooked = bookedTimeSlots.includes(time);
+          slots.push({ time, available: !isBooked });
+        });
       }
     } else {
-      // Private sessions: Anytime during business hours
-      return { min: "09:00", max: "20:00" };
+      // Private sessions: Multiple slots throughout the day
+      const times = [
+        "8:00 AM",
+        "9:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 PM",
+        "1:00 PM",
+        "2:00 PM",
+        "3:00 PM",
+        "4:00 PM",
+        "5:00 PM",
+        "6:00 PM",
+        "7:00 PM",
+        "8:00 pm",
+      ];
+      times.forEach((time) => {
+        const isBooked = bookedTimeSlots.includes(time);
+        slots.push({ time, available: !isBooked });
+      });
     }
+
+    return slots;
   };
 
-  const timeConstraints = getTimeConstraints();
-
-  const getDeliveryMessage = () => {
-    if (formData.serviceType !== "delivered" || !formData.date) return null;
-
-    const selectedDate = new Date(formData.date + "T00:00:00");
-    const isWeekend =
-      selectedDate.getDay() === 0 || selectedDate.getDay() === 6;
-
-    if (isWeekend) {
-      return "We can deliver any time during the day on weekends by arrangement with you.";
-    } else {
-      return "We deliver after 4 PM from Monday through Friday.";
-    }
-  };
+  const timeSlots = generateTimeSlots();
 
   const handleAddOnToggle = (addOn: string) => {
     setFormData((prev) => ({
@@ -80,15 +139,8 @@ export default function BookingForm({
     setStep("time");
   };
 
-  const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, timeSlot: e.target.value });
-  };
-
-  const handleContinueToDetails = () => {
-    if (!formData.timeSlot) {
-      alert("Please select a time.");
-      return;
-    }
+  const handleTimeSelect = (time: string) => {
+    setFormData({ ...formData, timeSlot: time });
     setStep("details");
   };
 
@@ -106,7 +158,8 @@ export default function BookingForm({
     }
 
     try {
-      const response = await fetch("/api/send-booking", {
+      // Create booking in database
+      const response = await fetch("/api/bookings/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -114,9 +167,11 @@ export default function BookingForm({
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         alert(
-          "Thank you for your booking request! We will contact you shortly to confirm your time slot."
+          "Thank you for your booking! We will contact you shortly to confirm your reservation."
         );
         setFormData({
           name: "",
@@ -135,14 +190,16 @@ export default function BookingForm({
         setStep("date");
         if (isPopup) onClose();
       } else {
+        // Handle specific error messages
         alert(
-          "There was an error sending your request. Please try again or call us at (785) 501-3414."
+          result.error ||
+            "There was an error. Please try again or call us at (785) 501-3414."
         );
       }
     } catch (error) {
       console.error("Error:", error);
       alert(
-        "There was an error sending your request. Please call us directly at (785) 501-3414."
+        "There was an error sending your request. Please try again or call us directly at (785) 501-3414."
       );
     }
   };
@@ -297,15 +354,13 @@ export default function BookingForm({
             />
             {formData.serviceType === "delivered" && (
               <p className="text-xs text-muted-foreground mt-4 p-3 bg-muted/50 rounded-lg">
-                📅 We deliver after 4 PM from Monday through Friday. On Saturday
-                and Sunday, we can deliver any time during the day by
-                arrangement with the client.
+                📅 Weekdays: Drop-off/pick-up after 4pm | Weekends: Anytime
               </p>
             )}
           </div>
         )}
 
-        {/* Step 2: Time Input */}
+        {/* Step 2: Time Slot Selection */}
         {step === "time" && (
           <div>
             <button
@@ -330,80 +385,43 @@ export default function BookingForm({
               )}
             </p>
 
-            {formData.serviceType === "delivered" && (
-              <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg">
-                <p className="text-sm text-blue-900 dark:text-blue-100">
-                  ℹ️ {getDeliveryMessage()}
-                </p>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">
+              Select Your Time Slot
+            </h3>
+            {isCheckingAvailability ? (
+              <div className="text-center py-8 text-muted-foreground">
+                Loading availability...
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {timeSlots.map((slot) => (
+                  <button
+                    key={slot.time}
+                    type="button"
+                    onClick={() =>
+                      slot.available && handleTimeSelect(slot.time)
+                    }
+                    disabled={!slot.available}
+                    className={`p-4 rounded-lg border-2 transition ${
+                      formData.timeSlot === slot.time
+                        ? "border-primary bg-primary/10"
+                        : slot.available
+                        ? "border-border hover:border-primary/50"
+                        : "border-border bg-muted opacity-50 cursor-not-allowed"
+                    }`}
+                  >
+                    <div className="font-semibold text-foreground">
+                      {slot.time}
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {slot.available ? "Available" : "Booked"}
+                    </div>
+                  </button>
+                ))}
               </div>
             )}
-
-            <h3 className="text-lg font-semibold mb-4 text-foreground">
-              Select Your Time
-            </h3>
-            <div className="mb-6">
-              <label className="block text-sm font-semibold mb-3 text-foreground">
-                Preferred Time *
-              </label>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                {(() => {
-                  const slots = [];
-                  const minHour = parseInt(timeConstraints.min.split(":")[0]);
-                  const maxHour = parseInt(timeConstraints.max.split(":")[0]);
-
-                  for (let hour = minHour; hour <= maxHour; hour++) {
-                    const time24 = `${hour.toString().padStart(2, "0")}:00`;
-                    const timeDisplay = new Date(
-                      `2000-01-01T${time24}`
-                    ).toLocaleTimeString("en-US", {
-                      hour: "numeric",
-                      minute: "2-digit",
-                      hour12: true,
-                    });
-
-                    slots.push(
-                      <button
-                        key={time24}
-                        type="button"
-                        onClick={() =>
-                          setFormData({ ...formData, timeSlot: time24 })
-                        }
-                        className={`relative p-4 rounded-xl border-2 transition-all font-medium ${
-                          formData.timeSlot === time24
-                            ? "border-primary bg-primary text-primary-foreground shadow-lg scale-105"
-                            : "border-border hover:border-primary/50 hover:bg-primary/5 text-foreground"
-                        }`}
-                      >
-                        <Clock
-                          className={`h-4 w-4 mx-auto mb-1 ${
-                            formData.timeSlot === time24
-                              ? "opacity-100"
-                              : "opacity-60"
-                          }`}
-                        />
-                        <div className="text-base">{timeDisplay}</div>
-                      </button>
-                    );
-                  }
-                  return slots;
-                })()}
-              </div>
-              <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground bg-muted/30 px-3 py-2 rounded-lg">
-                <span className="font-medium">💡 Tip:</span>
-                <span>Select your preferred start time</span>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleContinueToDetails}
-              className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition"
-            >
-              Continue to Details
-            </button>
-
-            <p className="text-xs text-muted-foreground mt-4 text-center italic">
-              Note: Final availability will be confirmed within 24 hours
+            <p className="text-xs text-muted-foreground mt-4 italic">
+              Real-time availability from our booking system
             </p>
           </div>
         )}
@@ -432,15 +450,7 @@ export default function BookingForm({
                     year: "numeric",
                   }
                 )}{" "}
-                at{" "}
-                {new Date(`2000-01-01T${formData.timeSlot}`).toLocaleTimeString(
-                  "en-US",
-                  {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    hour12: true,
-                  }
-                )}
+                at {formData.timeSlot}
               </div>
             </div>
 
@@ -656,7 +666,7 @@ export default function BookingForm({
             </button>
 
             <p className="text-sm text-muted-foreground text-center mt-4">
-              We'll confirm your booking within 24 hours
+              Booking will be saved to database
             </p>
           </div>
         )}

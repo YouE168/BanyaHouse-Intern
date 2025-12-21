@@ -8,16 +8,16 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true, // Changed from false - recommended
+    "strict": true, 
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler", // Changed from "node"
+    "moduleResolution": "bundler", 
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx", // Changed from "react-jsx" for Next.js
-    "paths": { // Removed baseUrl, kept paths
+    "jsx": "react-jsx", 
+    "paths": { 
       "@/*": [
         "./*"
       ]

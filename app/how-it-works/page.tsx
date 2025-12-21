@@ -23,7 +23,9 @@ export default function HowItWorksPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h1>
           <p className="text-lg opacity-90">
-            From booking to enjoying your sauna experience
+            Learn how to book and enjoy your mobile sauna experience in Topeka.
+            Simple 4-step process: book online, we deliver and setup, you relax
+            and enjoy premium wellness.
           </p>
         </div>
       </section>

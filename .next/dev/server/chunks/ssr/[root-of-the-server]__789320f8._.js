@@ -15,11 +15,15 @@ __turbopack_context__.n(__turbopack_context__.i("[project]/app/layout.tsx [app-r
 __turbopack_context__.s([
     "default",
     ()=>CityPage,
+    "generateMetadata",
+    ()=>generateMetadata,
     "generateStaticParams",
     ()=>generateStaticParams
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$api$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/next/dist/api/navigation.react-server.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/components/navigation.react-server.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-rsc] (ecmascript) <export default as ArrowLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-rsc] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/phone.js [app-rsc] (ecmascript) <export default as Phone>");
@@ -27,27 +31,60 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
+;
+async function generateMetadata({ params }) {
+    const { slug } = await params;
+    // Redirect Topeka to homepage to avoid keyword cannibalization
+    if (slug === "topeka") {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])("/");
+    }
+    const metaData = {
+        "kansas-city": {
+            title: "Mobile Sauna Rentals in Kansas City | BanyaHouse",
+            description: "Premium mobile sauna and cold plunge rentals in Kansas City, Kansas. Book private sessions and delivered experiences.",
+            url: "https://banyahouse.com/cities/kansas-city"
+        },
+        "overland-park": {
+            title: "Mobile Sauna Rentals in Overland Park | BanyaHouse",
+            description: "Premium mobile sauna and cold plunge rentals in Overland Park, Kansas. Book private sessions and delivered experiences.",
+            url: "https://banyahouse.com/cities/overland-park"
+        },
+        lawrence: {
+            title: "Mobile Sauna Rentals in Lawrence | BanyaHouse",
+            description: "Premium mobile sauna and cold plunge rentals in Lawrence, Kansas. Perfect for student groups, events, and corporate wellness.",
+            url: "https://banyahouse.com/cities/lawrence"
+        }
+    };
+    const meta = metaData[slug];
+    if (!meta) {
+        return {
+            title: "Service Area | BanyaHouse"
+        };
+    }
+    return {
+        title: meta.title,
+        description: meta.description,
+        alternates: {
+            canonical: meta.url
+        },
+        openGraph: {
+            title: meta.title,
+            description: meta.description,
+            url: meta.url
+        }
+    };
+}
 async function CityPage({ params }) {
     const { slug } = await params;
+    // Redirect Topeka to homepage to avoid keyword cannibalization
+    if (slug === "topeka") {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])("/");
+    }
     const cityData = {
-        topeka: {
-            name: "Topeka",
-            title: "Mobile Sauna Rentals in Topeka",
-            description: "Experience premium wellness in Topeka with BanyaHouse mobile sauna rentals",
-            details: [
-                "Our home base and primary service area",
-                "Fast delivery and setup in Topeka",
-                "Serving Topeka and surrounding communities",
-                "Easy access and convenient scheduling"
-            ],
-            address: "3339 SW34th Ct, Topeka, KS 66614",
-            phone: "(785) 501-3414",
-            email: "topmobilesauna@gmail.com"
-        },
         "kansas-city": {
             name: "Kansas City",
             title: "Mobile Sauna Rentals in Kansas City",
-            description: "Bring wellness to the Kansas City metropolitan area with BanyaHouse",
+            description: "",
             details: [
                 "Serving the greater Kansas City metropolitan area",
                 "Professional delivery and setup",
@@ -61,7 +98,7 @@ async function CityPage({ params }) {
         "overland-park": {
             name: "Overland Park",
             title: "Mobile Sauna Rentals in Overland Park",
-            description: "Premium sauna and cold plunge experiences in Overland Park",
+            description: "",
             details: [
                 "Serving the Overland Park area",
                 "Premium wellness experiences",
@@ -75,7 +112,7 @@ async function CityPage({ params }) {
         lawrence: {
             name: "Lawrence",
             title: "Mobile Sauna Rentals in Lawrence",
-            description: "University town wellness services and rentals by BanyaHouse",
+            description: "",
             details: [
                 "Serving the Lawrence area",
                 "Perfect for student groups and events",
@@ -99,22 +136,22 @@ async function CityPage({ params }) {
                         children: "Area Not Found"
                     }, void 0, false, {
                         fileName: "[project]/app/cities/[slug]/page.tsx",
-                        lineNumber: 73,
+                        lineNumber: 125,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                    lineNumber: 72,
+                    lineNumber: 124,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/cities/[slug]/page.tsx",
-                lineNumber: 71,
+                lineNumber: 123,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/cities/[slug]/page.tsx",
-            lineNumber: 70,
+            lineNumber: 122,
             columnNumber: 7
         }, this);
     }
@@ -133,14 +170,14 @@ async function CityPage({ params }) {
                                     size: 20
                                 }, void 0, false, {
                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                    lineNumber: 88,
+                                    lineNumber: 142,
                                     columnNumber: 13
                                 }, this),
                                 "Back to Service Areas"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 84,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -148,7 +185,7 @@ async function CityPage({ params }) {
                             children: city.title
                         }, void 0, false, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 91,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -156,18 +193,18 @@ async function CityPage({ params }) {
                             children: city.description
                         }, void 0, false, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 92,
+                            lineNumber: 146,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                    lineNumber: 83,
+                    lineNumber: 137,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/cities/[slug]/page.tsx",
-                lineNumber: 82,
+                lineNumber: 136,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -190,7 +227,7 @@ async function CityPage({ params }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 154,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -205,12 +242,12 @@ async function CityPage({ params }) {
                                                                 children: "✓"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                                lineNumber: 105,
+                                                                lineNumber: 161,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 104,
+                                                            lineNumber: 160,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -218,18 +255,18 @@ async function CityPage({ params }) {
                                                             children: detail
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 107,
+                                                            lineNumber: 165,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, i, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 103,
+                                                    lineNumber: 159,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 157,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -240,7 +277,7 @@ async function CityPage({ params }) {
                                                     children: "Ready to Book?"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 113,
+                                                    lineNumber: 171,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -248,7 +285,7 @@ async function CityPage({ params }) {
                                                     children: "Experience premium wellness with BanyaHouse. We deliver and setup everything for you."
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 114,
+                                                    lineNumber: 172,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -260,19 +297,19 @@ async function CityPage({ params }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 176,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 170,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 153,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -283,7 +320,7 @@ async function CityPage({ params }) {
                                             children: "Contact Information"
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 127,
+                                            lineNumber: 186,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -297,7 +334,7 @@ async function CityPage({ params }) {
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 189,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -307,26 +344,26 @@ async function CityPage({ params }) {
                                                                     children: "Address"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                                    lineNumber: 132,
+                                                                    lineNumber: 194,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     children: city.address
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                                    lineNumber: 133,
+                                                                    lineNumber: 197,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 193,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 188,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -337,7 +374,7 @@ async function CityPage({ params }) {
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 137,
+                                                            lineNumber: 201,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -347,7 +384,7 @@ async function CityPage({ params }) {
                                                                     children: "Phone"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                                    lineNumber: 139,
+                                                                    lineNumber: 206,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -356,19 +393,19 @@ async function CityPage({ params }) {
                                                                     children: city.phone
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                                    lineNumber: 140,
+                                                                    lineNumber: 209,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 138,
+                                                            lineNumber: 205,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 136,
+                                                    lineNumber: 200,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -379,7 +416,7 @@ async function CityPage({ params }) {
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 146,
+                                                            lineNumber: 218,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -389,7 +426,7 @@ async function CityPage({ params }) {
                                                                     children: "Email"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                                    lineNumber: 148,
+                                                                    lineNumber: 223,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -398,37 +435,37 @@ async function CityPage({ params }) {
                                                                     children: city.email
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                                    lineNumber: 149,
+                                                                    lineNumber: 226,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 147,
+                                                            lineNumber: 222,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 145,
+                                                    lineNumber: 217,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 128,
+                                            lineNumber: 187,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 185,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 98,
+                            lineNumber: 152,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -441,7 +478,7 @@ async function CityPage({ params }) {
                                             children: "Our Offerings"
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 160,
+                                            lineNumber: 240,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -449,7 +486,7 @@ async function CityPage({ params }) {
                                             children: "Private Group Sessions"
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 161,
+                                            lineNumber: 241,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -457,7 +494,7 @@ async function CityPage({ params }) {
                                             children: "Host a private escape at a time that works best for you. Our sauna accommodates 6 people with towels, hats, and lounging area included."
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 242,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -465,7 +502,7 @@ async function CityPage({ params }) {
                                             children: "Delivered Experience"
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 166,
+                                            lineNumber: 247,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -473,13 +510,13 @@ async function CityPage({ params }) {
                                             children: "Perfect for parties, retreats, or extended sessions. We deliver, setup, and handle everything. Rental options from 2-4 hours to 3-day rentals."
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 167,
+                                            lineNumber: 250,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 239,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -490,7 +527,7 @@ async function CityPage({ params }) {
                                             children: "What's Included"
                                         }, void 0, false, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 258,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -504,20 +541,20 @@ async function CityPage({ params }) {
                                                             children: "•"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 261,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Delivery, setup, and takedown"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 262,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 260,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -528,20 +565,20 @@ async function CityPage({ params }) {
                                                             children: "•"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 181,
+                                                            lineNumber: 265,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Firewood starter package"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 182,
+                                                            lineNumber: 266,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 180,
+                                                    lineNumber: 264,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -552,20 +589,20 @@ async function CityPage({ params }) {
                                                             children: "•"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 185,
+                                                            lineNumber: 269,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Cold plunge with ice"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 186,
+                                                            lineNumber: 270,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 184,
+                                                    lineNumber: 268,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -576,20 +613,20 @@ async function CityPage({ params }) {
                                                             children: "•"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 189,
+                                                            lineNumber: 273,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Towels and wool sauna hats"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 190,
+                                                            lineNumber: 274,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 188,
+                                                    lineNumber: 272,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -600,49 +637,49 @@ async function CityPage({ params }) {
                                                             children: "•"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 193,
+                                                            lineNumber: 277,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Expert guidance and support"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                            lineNumber: 194,
+                                                            lineNumber: 278,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                                    lineNumber: 192,
+                                                    lineNumber: 276,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 259,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 257,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 158,
+                            lineNumber: 238,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                    lineNumber: 97,
+                    lineNumber: 151,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/cities/[slug]/page.tsx",
-                lineNumber: 96,
+                lineNumber: 150,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -655,7 +692,7 @@ async function CityPage({ params }) {
                             children: "Ready to Experience Wellness?"
                         }, void 0, false, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 204,
+                            lineNumber: 288,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -667,7 +704,7 @@ async function CityPage({ params }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 205,
+                            lineNumber: 291,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -676,32 +713,29 @@ async function CityPage({ params }) {
                             children: "Book Now"
                         }, void 0, false, {
                             fileName: "[project]/app/cities/[slug]/page.tsx",
-                            lineNumber: 206,
+                            lineNumber: 294,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/cities/[slug]/page.tsx",
-                    lineNumber: 203,
+                    lineNumber: 287,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/cities/[slug]/page.tsx",
-                lineNumber: 202,
+                lineNumber: 286,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/cities/[slug]/page.tsx",
-        lineNumber: 81,
+        lineNumber: 135,
         columnNumber: 5
     }, this);
 }
 async function generateStaticParams() {
     return [
-        {
-            slug: "topeka"
-        },
         {
             slug: "kansas-city"
         },
