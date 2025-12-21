@@ -1,5 +1,3 @@
-"use client";
-
 import { Gift } from "lucide-react";
 import type { Metadata } from "next";
 
