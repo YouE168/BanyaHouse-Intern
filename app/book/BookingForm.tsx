@@ -25,7 +25,7 @@ export default function BookingForm({
     name: "",
     email: "",
     phone: "",
-    serviceType: "private",
+    serviceType: "private", // Default to private (or change to "delivered" if needed)
     date: "",
     timeSlot: "",
     duration: "2",
@@ -285,58 +285,7 @@ export default function BookingForm({
         onSubmit={handleSubmit}
         className="bg-card rounded-xl p-6 md:p-8 border border-border shadow-lg"
       >
-        {/* Service Type Selection - Always visible */}
-        <div className="mb-8">
-          <label className="block text-sm font-semibold mb-3 text-foreground">
-            Service Type *
-          </label>
-          <div className="grid grid-cols-2 gap-4">
-            <button
-              type="button"
-              onClick={() =>
-                setFormData({
-                  ...formData,
-                  serviceType: "private",
-                  date: "",
-                  timeSlot: "",
-                })
-              }
-              className={`p-4 rounded-lg border-2 transition ${
-                formData.serviceType === "private"
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-primary/50"
-              }`}
-            >
-              <div className="font-semibold text-foreground">
-                Private Session
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                Join us at our location
-              </div>
-            </button>
-            <button
-              type="button"
-              onClick={() =>
-                setFormData({
-                  ...formData,
-                  serviceType: "delivered",
-                  date: "",
-                  timeSlot: "",
-                })
-              }
-              className={`p-4 rounded-lg border-2 transition ${
-                formData.serviceType === "delivered"
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-primary/50"
-              }`}
-            >
-              <div className="font-semibold text-foreground">Delivery</div>
-              <div className="text-sm text-muted-foreground mt-1">
-                We come to you
-              </div>
-            </button>
-          </div>
-        </div>
+        {/* Service Type Selection - REMOVED */}
 
         {/* Step 1: Date Selection */}
         {step === "date" && (
