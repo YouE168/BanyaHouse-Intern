@@ -1,13 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Clock, Users, MapPin, X } from "lucide-react";
 import ModernCalendar from "./ModernCalendar";
-
-interface TimeSlot {
-  time: string;
-  available: boolean;
-}
 
 interface BookingFormProps {
   isPopup?: boolean;
@@ -18,14 +13,12 @@ export default function BookingForm({
   isPopup = false,
   onClose = () => {},
 }: BookingFormProps) {
-  const [step, setStep] = useState<"date" | "time" | "details">("date");
-  const [bookedTimeSlots, setBookedTimeSlots] = useState<string[]>([]);
-  const [isCheckingAvailability, setIsCheckingAvailability] = useState(false);
+  const [step, setStep] = useState<"date" | "details">("date");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    serviceType: "private", // Default to private (or change to "delivered" if needed)
+    serviceType: "private",
     date: "",
     timeSlot: "",
     duration: "2",
@@ -35,95 +28,6 @@ export default function BookingForm({
     waiverAccepted: false,
     message: "",
   });
-
-  // Fetch booked time slots when date changes
-  useEffect(() => {
-    async function fetchBookedSlots() {
-      if (!formData.date) return;
-
-      setIsCheckingAvailability(true);
-      try {
-        const response = await fetch(
-          `/api/bookings/availability?date=${formData.date}`
-        );
-        const data = await response.json();
-        setBookedTimeSlots(data.bookedTimeSlots || []);
-      } catch (error) {
-        console.error("Failed to fetch availability:", error);
-        setBookedTimeSlots([]);
-      } finally {
-        setIsCheckingAvailability(false);
-      }
-    }
-
-    fetchBookedSlots();
-  }, [formData.date]);
-
-  // Generate available time slots for selected date
-  const generateTimeSlots = (): TimeSlot[] => {
-    if (!formData.date) return [];
-
-    const slots: TimeSlot[] = [];
-    const selectedDate = new Date(formData.date + "T00:00:00");
-    const isWeekend =
-      selectedDate.getDay() === 0 || selectedDate.getDay() === 6;
-
-    if (formData.serviceType === "delivered") {
-      // Delivered: After 4pm weekdays, anytime weekends
-      if (isWeekend) {
-        const times = [
-          "8:00 AM",
-          "9:00 AM",
-          "10:00 AM",
-          "11:00 AM",
-          "12:00 PM",
-          "1:00 PM",
-          "2:00 PM",
-          "3:00 PM",
-          "4:00 PM",
-          "5:00 PM",
-          "6:00 PM",
-          "7:00 PM",
-          "8:00 PM",
-        ];
-        times.forEach((time) => {
-          const isBooked = bookedTimeSlots.includes(time);
-          slots.push({ time, available: !isBooked });
-        });
-      } else {
-        const times = ["4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM"];
-        times.forEach((time) => {
-          const isBooked = bookedTimeSlots.includes(time);
-          slots.push({ time, available: !isBooked });
-        });
-      }
-    } else {
-      // Private sessions: Multiple slots throughout the day
-      const times = [
-        "8:00 AM",
-        "9:00 AM",
-        "10:00 AM",
-        "11:00 AM",
-        "12:00 PM",
-        "1:00 PM",
-        "2:00 PM",
-        "3:00 PM",
-        "4:00 PM",
-        "5:00 PM",
-        "6:00 PM",
-        "7:00 PM",
-        "8:00 pm",
-      ];
-      times.forEach((time) => {
-        const isBooked = bookedTimeSlots.includes(time);
-        slots.push({ time, available: !isBooked });
-      });
-    }
-
-    return slots;
-  };
-
-  const timeSlots = generateTimeSlots();
 
   const handleAddOnToggle = (addOn: string) => {
     setFormData((prev) => ({
@@ -135,12 +39,7 @@ export default function BookingForm({
   };
 
   const handleDateSelect = (date: string) => {
-    setFormData({ ...formData, date, timeSlot: "" });
-    setStep("time");
-  };
-
-  const handleTimeSelect = (time: string) => {
-    setFormData({ ...formData, timeSlot: time });
+    setFormData({ ...formData, date });
     setStep("details");
   };
 
@@ -152,8 +51,8 @@ export default function BookingForm({
       return;
     }
 
-    if (!formData.date || !formData.timeSlot) {
-      alert("Please select a date and time.");
+    if (!formData.date) {
+      alert("Please select a date.");
       return;
     }
 
@@ -244,25 +143,6 @@ export default function BookingForm({
         <div className="w-8 h-0.5 bg-border" />
         <div
           className={`flex items-center gap-2 ${
-            step === "time"
-              ? "text-primary font-semibold"
-              : "text-muted-foreground"
-          }`}
-        >
-          <div
-            className={`w-8 h-8 rounded-full flex items-center justify-center ${
-              step === "time"
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted"
-            }`}
-          >
-            2
-          </div>
-          <span className="hidden sm:inline">Time</span>
-        </div>
-        <div className="w-8 h-0.5 bg-border" />
-        <div
-          className={`flex items-center gap-2 ${
             step === "details"
               ? "text-primary font-semibold"
               : "text-muted-foreground"
@@ -275,7 +155,7 @@ export default function BookingForm({
                 : "bg-muted"
             }`}
           >
-            3
+            2
           </div>
           <span className="hidden sm:inline">Details</span>
         </div>
@@ -285,8 +165,6 @@ export default function BookingForm({
         onSubmit={handleSubmit}
         className="bg-card rounded-xl p-6 md:p-8 border border-border shadow-lg"
       >
-        {/* Service Type Selection - REMOVED */}
-
         {/* Step 1: Date Selection */}
         {step === "date" && (
           <div>
@@ -301,16 +179,33 @@ export default function BookingForm({
                 new Date(Date.now() + 86400000).toISOString().split("T")[0]
               }
             />
-            {formData.serviceType === "delivered" && (
-              <p className="text-xs text-muted-foreground mt-4 p-3 bg-muted/50 rounded-lg">
-                📅 Weekdays: Drop-off/pick-up after 4pm | Weekends: Anytime
+
+            {/* Delivery Time Information */}
+            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg">
+              <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                <Clock size={18} className="text-blue-600 dark:text-blue-400" />
+                Delivery Schedule
+              </h4>
+              <div className="space-y-2 text-sm text-foreground">
+                <p className="flex items-start gap-2">
+                  <span className="font-medium min-w-[90px]">Weekdays:</span>
+                  <span className="text-muted-foreground">After 4:00 PM</span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="font-medium min-w-[90px]">Weekends:</span>
+                  <span className="text-muted-foreground">Anytime</span>
+                </p>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3 italic">
+                We'll contact you to confirm the exact delivery time after
+                booking
               </p>
-            )}
+            </div>
           </div>
         )}
 
-        {/* Step 2: Time Slot Selection */}
-        {step === "time" && (
+        {/* Step 2: Details Form */}
+        {step === "details" && (
           <div>
             <button
               type="button"
@@ -319,87 +214,27 @@ export default function BookingForm({
             >
               ← Change Date
             </button>
-            <h3 className="text-lg font-semibold mb-2 text-foreground">
-              Selected Date
-            </h3>
-            <p className="text-foreground mb-6 p-3 bg-primary/10 rounded-lg">
-              {new Date(formData.date + "T00:00:00").toLocaleDateString(
-                "en-US",
-                {
-                  weekday: "long",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                }
-              )}
-            </p>
-
-            <h3 className="text-lg font-semibold mb-4 text-foreground">
-              Select Your Time Slot
-            </h3>
-            {isCheckingAvailability ? (
-              <div className="text-center py-8 text-muted-foreground">
-                Loading availability...
-              </div>
-            ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {timeSlots.map((slot) => (
-                  <button
-                    key={slot.time}
-                    type="button"
-                    onClick={() =>
-                      slot.available && handleTimeSelect(slot.time)
-                    }
-                    disabled={!slot.available}
-                    className={`p-4 rounded-lg border-2 transition ${
-                      formData.timeSlot === slot.time
-                        ? "border-primary bg-primary/10"
-                        : slot.available
-                        ? "border-border hover:border-primary/50"
-                        : "border-border bg-muted opacity-50 cursor-not-allowed"
-                    }`}
-                  >
-                    <div className="font-semibold text-foreground">
-                      {slot.time}
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {slot.available ? "Available" : "Booked"}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-            <p className="text-xs text-muted-foreground mt-4 italic">
-              Real-time availability from our booking system
-            </p>
-          </div>
-        )}
-
-        {/* Step 3: Details Form */}
-        {step === "details" && (
-          <div>
-            <button
-              type="button"
-              onClick={() => setStep("time")}
-              className="text-sm text-primary hover:opacity-80 mb-4"
-            >
-              ← Change Time
-            </button>
 
             <div className="mb-6 p-4 bg-primary/10 rounded-lg">
               <div className="text-sm text-muted-foreground">
-                Booking Summary:
+                Selected Date:
               </div>
               <div className="font-semibold text-foreground">
                 {new Date(formData.date + "T00:00:00").toLocaleDateString(
                   "en-US",
                   {
+                    weekday: "long",
                     month: "long",
                     day: "numeric",
                     year: "numeric",
                   }
-                )}{" "}
-                at {formData.timeSlot}
+                )}
+              </div>
+              <div className="text-xs text-muted-foreground mt-2">
+                {new Date(formData.date + "T00:00:00").getDay() === 0 ||
+                new Date(formData.date + "T00:00:00").getDay() === 6
+                  ? "📅 Weekend - Delivery available anytime"
+                  : "📅 Weekday - Delivery available after 4:00 PM"}
               </div>
             </div>
 
@@ -563,7 +398,7 @@ export default function BookingForm({
                 htmlFor="message"
                 className="block text-sm font-semibold mb-2 text-foreground"
               >
-                Special Requests
+                Special Requests / Preferred Time
               </label>
               <textarea
                 id="message"
@@ -573,7 +408,7 @@ export default function BookingForm({
                 }
                 rows={3}
                 className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none bg-background text-foreground"
-                placeholder="Any special requests?"
+                placeholder="Let us know your preferred delivery time or any special requests..."
               />
             </div>
 
@@ -615,7 +450,7 @@ export default function BookingForm({
             </button>
 
             <p className="text-sm text-muted-foreground text-center mt-4">
-              Booking will be saved to database
+              We'll contact you to confirm the exact delivery time
             </p>
           </div>
         )}

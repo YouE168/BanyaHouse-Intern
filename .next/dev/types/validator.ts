@@ -173,6 +173,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/api/send-confirmation/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/send-confirmation">> = Specific
+  const handler = {} as typeof import("../../../app/api/send-confirmation/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 
 
 

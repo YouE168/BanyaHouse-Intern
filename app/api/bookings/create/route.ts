@@ -54,6 +54,18 @@ export async function POST(request: Request) {
       throw error;
     }
 
+    // Send confirmation emails
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/send-confirmation`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(booking),
+      });
+    } catch (emailError) {
+      console.error('Failed to send emails:', emailError);
+      // Don't fail the booking if email fails
+    }
+
     return NextResponse.json({ 
       success: true, 
       booking,
