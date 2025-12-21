@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import { ArrowLeft, MapPin, Phone, Mail } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -12,8 +12,7 @@ export async function generateMetadata({
 
   // Redirect Topeka to homepage to avoid keyword cannibalization
   if (slug === "topeka") {
-    redirect("/");
-  }
+    permanentRedirect("/");
 
   const metaData = {
     "kansas-city": {
@@ -67,7 +66,7 @@ export default async function CityPage({
 
   // Redirect Topeka to homepage to avoid keyword cannibalization
   if (slug === "topeka") {
-    redirect("/");
+    permanentRedirect("/");
   }
 
   const cityData = {

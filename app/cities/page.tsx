@@ -44,21 +44,26 @@ export default function CitiesPage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
-            {cities.map((city) => (
-              <Link
-                key={city.name}
-                href={`/cities/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
-                className="group p-8 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition"
-              >
-                <h2 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition">
-                  {city.name}
-                </h2>
-                <p className="text-muted-foreground mb-4">{city.description}</p>
-                <span className="text-primary font-semibold flex items-center gap-2">
-                  View Details →
-                </span>
-              </Link>
-            ))}
+{cities.map((city) => {
+  const isTopeka = city.name.toLowerCase() === "topeka";
+  const href = isTopeka ? "/" : `/cities/${city.name.toLowerCase().replace(/\s+/g, "-")}`;
+
+  return (
+    <Link
+      key={city.name}
+      href={href}
+      className="group p-8 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition"
+    >
+      <h2 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition">
+        {city.name}
+      </h2>
+      <p className="text-muted-foreground mb-4">{city.description}</p>
+      <span className="text-primary font-semibold flex items-center gap-2">
+        View Details →
+      </span>
+    </Link>
+  );
+})}
           </div>
         </div>
       </section>
