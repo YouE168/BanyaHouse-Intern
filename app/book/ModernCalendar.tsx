@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface CalendarProps {
   selectedDate: string;
   onDateSelect: (date: string) => void;
-  bookedDates?: string[]; // Array of dates in YYYY-MM-DD
+  bookedDates?: string[]; // Array of dates in YYYY-MM-DD format
   minDate?: string;
 }
 
@@ -158,11 +158,11 @@ export default function ModernCalendar({
                 }
                 ${
                   isBooked && !isSelected
-                    ? "bg-red-100 text-red-400 cursor-not-allowed line-through"
+                    ? "bg-pink-200 dark:bg-pink-900/40 text-pink-700 dark:text-pink-300 cursor-not-allowed line-through"
                     : ""
                 }
                 ${
-                  isPast && !isSelected
+                  isPast && !isBooked && !isSelected
                     ? "text-muted-foreground/40 cursor-not-allowed"
                     : ""
                 }
@@ -189,7 +189,7 @@ export default function ModernCalendar({
           <span className="text-muted-foreground">Selected</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 rounded bg-red-100"></div>
+          <div className="w-4 h-4 rounded bg-pink-200 dark:bg-pink-900/40"></div>
           <span className="text-muted-foreground">Unavailable</span>
         </div>
         <div className="flex items-center gap-2">

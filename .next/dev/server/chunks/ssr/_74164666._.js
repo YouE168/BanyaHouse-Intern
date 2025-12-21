@@ -11,13 +11,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 "use client";
 ;
 ;
-const openVenmo = (amount)=>{
-    const venmoUsername = "banyahouse";
-    const note = "BanyaHouse Gift Card";
-    const url = `https://venmo.com/${venmoUsername}?txn=pay&amount=${amount}&note=${encodeURIComponent(note)}`;
-    window.open(url, "_blank");
-};
 function GiftCardsPage() {
+    const openVenmo = (amount)=>{
+        const venmoUsername = "banyahouse";
+        const note = "BanyaHouse Gift Card";
+        const url = `https://venmo.com/${venmoUsername}?txn=pay&amount=${amount}&note=${encodeURIComponent(note)}`;
+        window.open(url, "_blank");
+    };
     const giftCards = [
         {
             amount: 100,
@@ -264,7 +264,7 @@ function GiftCardsPage() {
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    children: "No expiration – valid indefinitely"
+                                                    children: "No expiration — valid indefinitely"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/gift-cards/page.tsx",
                                                     lineNumber: 89,

@@ -88,6 +88,10 @@
     --color-blue-600: #155dfc;
     --color-blue-800: #193cb8;
     --color-blue-950: #162456;
+    --color-pink-200: #fccee8;
+    --color-pink-300: #fda5d5;
+    --color-pink-700: #c4005c;
+    --color-pink-900: #861043;
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
@@ -137,6 +141,10 @@
       --color-blue-600: lab(44.0605% 29.0279 -86.0352);
       --color-blue-800: lab(30.2514% 27.7853 -70.2699);
       --color-blue-950: lab(15.6723% 8.86232 -32.2945);
+      --color-pink-200: lab(87.4504% 19.6 -6.46662);
+      --color-pink-300: lab(77.8308% 38.525 -10.5394);
+      --color-pink-700: lab(42.1737% 71.8009 7.42233);
+      --color-pink-900: lab(29.4367% 49.3962 3.35757);
     }
   }
 }
@@ -1020,6 +1028,10 @@
     }
   }
 
+  .bg-pink-200 {
+    background-color: var(--color-pink-200);
+  }
+
   .bg-primary {
     background-color: var(--primary);
   }
@@ -1320,6 +1332,10 @@
     .text-muted-foreground\/40 {
       color: color-mix(in oklab, var(--muted-foreground) 40%, transparent);
     }
+  }
+
+  .text-pink-700 {
+    color: var(--color-pink-700);
   }
 
   .text-primary {
@@ -1784,8 +1800,22 @@
     }
   }
 
+  .dark\:bg-pink-900\/40:is(.dark *) {
+    background-color: #86104366;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:bg-pink-900\/40:is(.dark *) {
+      background-color: color-mix(in oklab, var(--color-pink-900) 40%, transparent);
+    }
+  }
+
   .dark\:text-blue-400:is(.dark *) {
     color: var(--color-blue-400);
+  }
+
+  .dark\:text-pink-300:is(.dark *) {
+    color: var(--color-pink-300);
   }
 
   .\[\&\[data-state\=open\]\>svg\]\:rotate-180[data-state="open"] > svg {
