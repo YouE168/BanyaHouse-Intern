@@ -1273,6 +1273,10 @@
     padding-block: calc(var(--spacing) * 5);
   }
 
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }

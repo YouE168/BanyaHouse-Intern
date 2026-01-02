@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Clock, Users, MapPin, X } from "lucide-react";
 import ModernCalendar from "./ModernCalendar";
 
@@ -14,6 +14,8 @@ export default function BookingForm({
   onClose = () => {},
 }: BookingFormProps) {
   const [step, setStep] = useState<"date" | "details">("date");
+  const [bookedDates, setBookedDates] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,6 +30,26 @@ export default function BookingForm({
     waiverAccepted: false,
     message: "",
   });
+
+  // Fetch booked dates when component mounts
+  useEffect(() => {
+    fetchBookedDates();
+  }, []);
+
+  const fetchBookedDates = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch("/api/bookings/booked-dates");
+      if (response.ok) {
+        const data = await response.json();
+        setBookedDates(data.bookedDates || []);
+      }
+    } catch (error) {
+      console.error("Error fetching booked dates:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleAddOnToggle = (addOn: string) => {
     setFormData((prev) => ({
@@ -87,6 +109,8 @@ export default function BookingForm({
           message: "",
         });
         setStep("date");
+        // Refresh booked dates after successful booking
+        fetchBookedDates();
         if (isPopup) onClose();
       } else {
         // Handle specific error messages
@@ -171,14 +195,20 @@ export default function BookingForm({
             <h3 className="text-lg font-semibold mb-4 text-foreground">
               Select Your Date
             </h3>
-            <ModernCalendar
-              selectedDate={formData.date}
-              onDateSelect={handleDateSelect}
-              bookedDates={[]}
-              minDate={
-                new Date(Date.now() + 86400000).toISOString().split("T")[0]
-              }
-            />
+            {loading ? (
+              <div className="text-center py-8 text-muted-foreground">
+                Loading calendar...
+              </div>
+            ) : (
+              <ModernCalendar
+                selectedDate={formData.date}
+                onDateSelect={handleDateSelect}
+                bookedDates={bookedDates}
+                minDate={
+                  new Date(Date.now() + 86400000).toISOString().split("T")[0]
+                }
+              />
+            )}
 
             {/* Delivery Time Information */}
             <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg">

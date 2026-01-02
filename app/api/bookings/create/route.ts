@@ -5,7 +5,7 @@ export async function POST(request: Request) {
   try {
     const bookingData = await request.json();
 
-    // Validate required fields (removed timeSlot requirement)
+    // Validate required fields
     if (!bookingData.date || !bookingData.name || !bookingData.email || !bookingData.phone) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -13,12 +13,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create the booking (timeSlot is now optional/null)
+    // Create the booking with "To be confirmed" as default time_slot
     const { data: booking, error } = await supabase
       .from('bookings')
       .insert({
         booking_date: bookingData.date,
-        time_slot: bookingData.timeSlot || null, // Allow null or empty time slot
+        time_slot: bookingData.timeSlot || 'To be confirmed', // ← Changed from null to default value
         service_type: bookingData.serviceType,
         duration: bookingData.duration,
         guests: parseInt(bookingData.guests),
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
         location: bookingData.location,
         add_ons: bookingData.addOns || [],
         special_requests: bookingData.message || null,
-        status: 'pending', // Changed to 'pending' since no specific time is confirmed yet
+        status: 'pending',
       })
       .select()
       .single();
