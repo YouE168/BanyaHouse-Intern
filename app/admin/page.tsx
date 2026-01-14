@@ -1,4 +1,5 @@
 "use client";
+import LogoutButton from "@/components/admin/LogoutButton";
 
 import { useState, useEffect } from "react";
 import {

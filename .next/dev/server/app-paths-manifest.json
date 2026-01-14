@@ -1,5 +1,7 @@
 {
-  "/api/bookings/booked-dates/route": "app/api/bookings/booked-dates/route.js",
-  "/book/page": "app/book/page.js",
-  "/page": "app/page.js"
+  "/admin/login/page": "app/admin/login/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/api/admin/all-bookings/route": "app/api/admin/all-bookings/route.js",
+  "/api/admin/blocked-dates/route": "app/api/admin/blocked-dates/route.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js"
 }

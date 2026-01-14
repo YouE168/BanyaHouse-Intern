@@ -1,5 +1,5 @@
 "use client";
-
+import LogoutButton from "@/components/admin/LogoutButton";
 import { useState, useEffect } from "react";
 import { Calendar, X, Check, Loader2 } from "lucide-react";
 
