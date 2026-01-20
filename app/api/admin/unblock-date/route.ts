@@ -9,18 +9,30 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Date is required' }, { status: 400 });
     }
 
+    console.log('🗑️ Attempting to delete blocked date:', date);
+
     // Delete the blocked date entry
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('bookings')
       .delete()
       .eq('booking_date', date)
-      .eq('customer_name', 'BLOCKED DATE');
+      .eq('customer_name', 'BLOCKED DATE')
+      .select(); // Add .select() to see what was deleted
 
-    if (error) throw error;
+    console.log('📊 Delete result:', { data, error });
+
+    if (error) {
+      console.error('❌ Supabase error:', error);
+      throw error;
+    }
+
+    if (!data || data.length === 0) {
+      console.warn('⚠️ No rows were deleted - might be a permissions issue');
+    }
 
     return NextResponse.json({ success: true, message: 'Date unblocked successfully' });
   } catch (error) {
-    console.error('Error unblocking date:', error);
+    console.error('💥 Error unblocking date:', error);
     return NextResponse.json(
       { error: 'Failed to unblock date' },
       { status: 500 }
